@@ -40,5 +40,7 @@ namespace Sweng421FinalProject
             this.Close(); //Doesn't close until after dashboard... somewhat waste of resources
             // Link to look into: https://social.msdn.microsoft.com/Forums/en-US/0333e0c3-1a86-4cf6-822e-9ec23dc766e6/how-to-switch-between-c-winform?forum=winforms
         }
+
+
     }
 }
