@@ -516,6 +516,7 @@
             this.Controls.Add(this.DashboardLabel);
             this.Name = "TeacherDashboard";
             this.Text = "TeacherDashboard";
+            this.Load += new System.EventHandler(this.TeacherDashboard_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
