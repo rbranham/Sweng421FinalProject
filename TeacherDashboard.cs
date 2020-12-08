@@ -14,5 +14,10 @@ namespace Sweng421FinalProject
         {
             InitializeComponent();
         }
+
+        private void TeacherDashboard_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
