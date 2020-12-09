@@ -45,7 +45,7 @@
             this.TeacherButton.TabIndex = 0;
             this.TeacherButton.Text = "Teacher";
             this.TeacherButton.UseVisualStyleBackColor = true;
-            this.TeacherButton.Click += new System.EventHandler(this.button1_Click);
+            this.TeacherButton.Click += new System.EventHandler(this.teacher_Click);
             // 
             // Student
             // 
@@ -55,7 +55,7 @@
             this.Student.TabIndex = 1;
             this.Student.Text = "Student";
             this.Student.UseVisualStyleBackColor = true;
-            this.Student.Click += new System.EventHandler(this.button1_Click_1);
+            this.Student.Click += new System.EventHandler(this.student_Click);
             // 
             // textBox1
             // 
@@ -96,6 +96,7 @@
             this.button1.TabIndex = 4;
             this.button1.Text = "Submit";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.submit_Click);
             // 
             // LoginForm
             // 
