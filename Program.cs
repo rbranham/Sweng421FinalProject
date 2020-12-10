@@ -75,9 +75,20 @@ namespace Sweng421FinalProject
         //Stubbed
         class MultipleChoiceQuestion : QuestionIF
         {
+            String questionText; 
+            
+            //Need to call this to populate data
             public void createQuiz()
             {
-                throw new NotImplementedException();
+                using( MultipleChoiceCreation p = new MultipleChoiceCreation())
+                {
+                    if(p.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                    {
+                        this.questionText = p.question; //Get Question value
+                    }
+                   
+                }
+                              
             }
 
             public ResultsIF generateAnswerKey()
