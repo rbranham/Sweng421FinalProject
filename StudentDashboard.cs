@@ -23,8 +23,10 @@ namespace Sweng421FinalProject
 
         private void answerButton_Click(object sender, EventArgs e)
         {
-            String aQuestion = listQuestionsToAnswer.SelectedItems[0].Text;
+            
+            
 
         }
+
     }
 }

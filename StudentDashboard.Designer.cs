@@ -80,7 +80,7 @@
             this.answerButton.Name = "answerButton";
             this.answerButton.Size = new System.Drawing.Size(75, 23);
             this.answerButton.TabIndex = 4;
-            this.answerButton.Text = "Answer";
+            this.answerButton.Text = "Start";
             this.answerButton.UseVisualStyleBackColor = true;
             this.answerButton.Click += new System.EventHandler(this.answerButton_Click);
             // 
