@@ -12,12 +12,16 @@ namespace Sweng421FinalProject
     {
         //Variables to save 
         public String question;
+
         private int answerNum = 0;
+
+
 
 
         public MultipleChoiceCreation()
         {
             InitializeComponent();
+
             answerRB1.Hide();
             answerRB2.Hide();
             answerRB3.Hide();
@@ -26,12 +30,14 @@ namespace Sweng421FinalProject
             answerBox2.Hide();
             answerBox3.Hide();
             answerBox4.Hide();
+
         }
 
         private void buttonDone_Click(object sender, EventArgs e)
         {
             question = textBoxQuestion.Text; //Get Question text
         }
+
 
         private void numAnswers_ValueChanged(object sender, EventArgs e)
         {
@@ -85,5 +91,6 @@ namespace Sweng421FinalProject
                 answerBox4.Show();
             }
         }
+
     }
 }
