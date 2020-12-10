@@ -13,7 +13,7 @@ namespace Sweng421FinalProject
     public partial class CompositeCreation : Form
     {
 
-         public List<QuestionIF> subQuestions;
+        public List<QuestionIF> subQuestions;
 
         public CompositeCreation()
         {
@@ -50,4 +50,5 @@ namespace Sweng421FinalProject
 
 
     }
+}
 
