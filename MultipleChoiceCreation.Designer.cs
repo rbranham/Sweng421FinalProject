@@ -39,10 +39,7 @@
             this.answerBox2 = new System.Windows.Forms.TextBox();
             this.answerBox3 = new System.Windows.Forms.TextBox();
             this.answerBox4 = new System.Windows.Forms.TextBox();
-            this.numAnswers = new System.Windows.Forms.NumericUpDown();
-            this.label1 = new System.Windows.Forms.Label();
             this.applyButton = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.numAnswers)).BeginInit();
             this.SuspendLayout();
             // 
             // labelQuestion
@@ -143,28 +140,6 @@
             this.answerBox4.Size = new System.Drawing.Size(647, 23);
             this.answerBox4.TabIndex = 1;
             // 
-            // numAnswers
-            // 
-            this.numAnswers.Location = new System.Drawing.Point(32, 314);
-            this.numAnswers.Maximum = new decimal(new int[] {
-            4,
-            0,
-            0,
-            0});
-            this.numAnswers.Name = "numAnswers";
-            this.numAnswers.Size = new System.Drawing.Size(120, 23);
-            this.numAnswers.TabIndex = 7;
-            this.numAnswers.ValueChanged += new System.EventHandler(this.numAnswers_ValueChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 296);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(165, 15);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Number of Answers Required:";
-            // 
             // applyButton
             // 
             this.applyButton.Location = new System.Drawing.Point(620, 403);
@@ -181,8 +156,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.applyButton);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.numAnswers);
             this.Controls.Add(this.answerBox4);
             this.Controls.Add(this.answerBox3);
             this.Controls.Add(this.answerBox2);
@@ -196,7 +169,6 @@
             this.Controls.Add(this.labelQuestion);
             this.Name = "MultipleChoiceCreation";
             this.Text = "MultipleChoiceCreation";
-            ((System.ComponentModel.ISupportInitialize)(this.numAnswers)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -216,8 +188,6 @@
         private System.Windows.Forms.TextBox answerBox2;
         private System.Windows.Forms.TextBox answerBox3;
         private System.Windows.Forms.TextBox answerBox4;
-        private System.Windows.Forms.NumericUpDown numAnswers;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button applyButton;
     }
 }
