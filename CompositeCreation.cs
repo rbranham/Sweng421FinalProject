@@ -20,6 +20,7 @@ namespace Sweng421FinalProject
             InitializeComponent();
             subQuestions = new List<QuestionIF>(); //Init
         }
+
         private void openDashboard(Form frm)
         {
             frm.Location = this.Location;
@@ -29,11 +30,15 @@ namespace Sweng421FinalProject
             frm.ShowDialog();
             //this.Close();
         }
+
+
+
         private void buttonAdd_Click(object sender, EventArgs e)
         {
             //Get list item of question type. 
             //Run factory to create question
             //run questions create function to fill out question
+
             openDashboard(new MultipleChoiceCreation());
             //Add created questtion to subquesiotns
         }
@@ -42,5 +47,9 @@ namespace Sweng421FinalProject
         {
             this.Close();
         }
+
+            //Add created questtion to subquesiotns
+        }
+
     }
 }
