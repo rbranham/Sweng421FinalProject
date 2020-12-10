@@ -28,6 +28,8 @@ namespace Sweng421FinalProject
             InitializeComponent();
 
             databaseConnection = DBhandler.getInstance(); //Get database connection
+            studentID = databaseConnection.getstudentAccounts(); //Refresh student list
+            teachID = databaseConnection.getTeacherAccounts(); //Refresh teacher list
         }
 
         private void openDashboard(Form frm)
@@ -44,13 +46,13 @@ namespace Sweng421FinalProject
         private void student_Click(object sender, EventArgs e)
         {
             selection = "student";
-            studentID = databaseConnection.getstudentAccounts(); //Refresh student list
+            
         }
 
         private void teacher_Click(object sender, EventArgs e)
         {
             selection = "teacher";
-            teachID = databaseConnection.getTeacherAccounts(); //Refresh teacher list
+            
         }
 
         private void submit_Click(object sender, EventArgs e)
@@ -59,6 +61,7 @@ namespace Sweng421FinalProject
             text2 = textBox2.Text;
             resultt = teachID.IndexOf(text1);
             results = studentID.IndexOf(text2);
+
             if (resultt >= 0)
                 tvalidID = true;
             if (results >= 0)
