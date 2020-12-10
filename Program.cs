@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace Sweng421FinalProject
 {
-    static class Program
+    public static class Program
     {
         /// <summary>
         ///  The main entry point for the application.
@@ -24,20 +24,19 @@ namespace Sweng421FinalProject
         /*
          * Interface for questions 
         */
-        interface QuestionIF {
+        public interface QuestionIF {
 
             public ResultsIF runQuiz();  //Run from student portal will call specific pop up and then return results
             //Should evenetualy return a results interface
 
-            public void createQuiz();  //Run from teacher portal to create question
-            //Maybe just run in constructor?
+            public void createQuiz();  //Run from teacher portal to create questions and quizes
 
             public ResultsIF generateAnswerKey(); //Run to generate a ResultsIF with the correct answer.   
             //we may want to generate on creation, not sure. 
         }
 
 
-        class Quiz : QuestionIF
+        public class Quiz : QuestionIF
         {
             List<QuestionIF> subQuestions;
             
@@ -46,9 +45,14 @@ namespace Sweng421FinalProject
             {
                 throw new NotImplementedException();
 
-                //Launch creation interface dialog
-                //returns a list of subQuestions
-                //set returned list to internal list
+                using (CompositeCreation p = new CompositeCreation()) //Launch creation interface dialog
+                {
+                    if (p.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                    {
+                        this.subQuestions = p.subQuestions; //set generated question list to internal list
+                    }
+
+                }                
 
             }
 
@@ -72,7 +76,7 @@ namespace Sweng421FinalProject
         }
 
         //Stubbed
-        class MultipleChoiceQuestion : QuestionIF
+        public class MultipleChoiceQuestion : QuestionIF
         {
             String questionText; 
             
@@ -102,13 +106,13 @@ namespace Sweng421FinalProject
         }
 
 
-        interface ResultsIF {
+        public interface ResultsIF {
 
             public void writeToFile(String fileString); //Writes the results to a file specified by string
 
         }
 
-        class ResultDecoratorForComposites : ResultsIF
+        public class ResultDecoratorForComposites : ResultsIF
         {
             List<ResultsIF> rList;
 
