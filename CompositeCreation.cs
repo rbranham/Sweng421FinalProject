@@ -14,11 +14,13 @@ namespace Sweng421FinalProject
     {
 
         public List<QuestionIF> subQuestions;
+        private questionsFactory qFactory; 
 
         public CompositeCreation()
         {
             InitializeComponent();
             subQuestions = new List<QuestionIF>(); //Init
+            qFactory = new questionsFactory(); //Init
         }
 
         private void openDashboard(Form frm)
@@ -35,12 +37,12 @@ namespace Sweng421FinalProject
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            //Get list item of question type. 
-            //Run factory to create question
-            //run questions create function to fill out question
+            String typeString = listViewQuestionsTypes.SelectedItems[0].Text; //Get string of selected question type. 
+            QuestionIF nextQuestion = qFactory.createQuestion(typeString); //Run factory to create question
 
-            openDashboard(new MultipleChoiceCreation());
-            //Add created questtion to subquesiotns
+            nextQuestion.createQuiz(); //run questions create function to fill out questions values
+
+            subQuestions.Add(nextQuestion); //Add created question to subquesiotns
         }
 
         private void doneButton_Click(object sender, EventArgs e)
@@ -48,7 +50,18 @@ namespace Sweng421FinalProject
             this.Close();
         }
 
+        private void CompositeCreation_Load(object sender, EventArgs e)
+        {
+            DBhandler dbConnection = DBhandler.getInstance();
+            List<String> qTypes = dbConnection.getQuestionTypes();
 
+            foreach(String t in qTypes)
+            {
+                listViewQuestionsTypes.Items.Add(t); //Add types into list
+            }
+
+            //Can sort here if needed
+        }
     }
 }
 
