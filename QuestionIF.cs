@@ -94,7 +94,7 @@ namespace Sweng421FinalProject
 
         public string getName()
         {
-            return questionText; 
+            return "Multiple Choice"; 
         }
 
         public ResultsIF runQuiz()
