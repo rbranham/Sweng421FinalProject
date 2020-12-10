@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Text;
+using System.Threading.Tasks;
+using Google.Cloud.Firestore;
 
 namespace Sweng421FinalProject
 {
@@ -14,11 +16,11 @@ namespace Sweng421FinalProject
 
         String dbFolderString = @"..\..\..\DatabaseFolder\" ;
 
-        private static DBhandler INSTANCE = null; 
-
+        private static DBhandler INSTANCE = null;
+        FirestoreDb db; 
         private DBhandler()
         {
-
+            db = FirestoreDb.Create("sweng421-finalproject"); //set up connection
         }
 
         
@@ -65,20 +67,21 @@ namespace Sweng421FinalProject
             return s;
         }  
 
-        public List<String> getQuestionTypes()
+        public async Task<List<String>> getQuestionTypes()
         {
+
             List<String> q = new List<String>();
-
-            Debug.WriteLine("Accessing Question Types");
-
-            foreach (String line in File.ReadLines(dbFolderString + "question_types.txt", Encoding.UTF8))
+            //fire store way
+            CollectionReference typesRef = db.Collection("quizTypes");
+            QuerySnapshot snapshot = await typesRef.GetSnapshotAsync();
+            foreach (DocumentSnapshot document in snapshot.Documents)
             {
-                //add lines to list view
-                Debug.WriteLine("Added Question Type: " + line);
-                q.Add(line);
+                Dictionary<string, object> documentDictionary = document.ToDictionary();
+                q.Add(documentDictionary["Name"].ToString());
             }
 
             return q;
+            
         }
 
     }

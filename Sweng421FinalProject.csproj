@@ -6,4 +6,18 @@
     <UseWindowsForms>true</UseWindowsForms>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="sweng421-finalproject-firebase-adminsdk-5ness-79a335fb60.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="sweng421-finalproject-firebase-adminsdk-5ness-79a335fb60.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Google.Cloud.Firestore" Version="1.1.0-beta01" />
+	</ItemGroup>
+	
 </Project>

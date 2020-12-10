@@ -51,15 +51,8 @@ namespace Sweng421FinalProject
 
         private void CompositeCreation_Load(object sender, EventArgs e)
         {
-            DBhandler dbConnection = DBhandler.getInstance();
-            List<String> qTypes = dbConnection.getQuestionTypes();
-
-            foreach(String t in qTypes)
-            {
-                listViewQuestionsTypes.Items.Add(t); //Add types into list
-            }
-
-            //Can sort here if needed
+            setTypeList();
+            
         }
 
         /*
@@ -76,6 +69,22 @@ namespace Sweng421FinalProject
                 listViewQuestions.Items.Add(i + ". " + q.getName());
             }
 
+        }
+
+        /*
+         * Function to refresh question type lsit
+         */
+        private async void setTypeList()
+        {
+            DBhandler dbConnection = DBhandler.getInstance();
+            List<String> qTypes = await dbConnection.getQuestionTypes();
+
+            foreach (String t in qTypes)
+            {
+                listViewQuestionsTypes.Items.Add(t); //Add types into list
+            }
+
+            //Can sort here if needed
         }
     }
 }
