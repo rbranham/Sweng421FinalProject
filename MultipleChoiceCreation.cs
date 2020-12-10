@@ -14,7 +14,6 @@ namespace Sweng421FinalProject
         public String question = "";
         public String[] answer;
         public String correctAnswer = "";
-        public int test;
 
         public MultipleChoiceCreation()
         {
