@@ -13,7 +13,7 @@ namespace Sweng421FinalProject
         //Variables to save 
         public String question = "";
         public String[] answer;
-        public String correctAnswer = "";
+        public String correct = "";
 
         public MultipleChoiceCreation()
         {
@@ -21,10 +21,16 @@ namespace Sweng421FinalProject
             buttonDone.Hide();
         }
 
-        private void buttonDone_Click(object sender, EventArgs e)
+        private void openDashboard(Form frm)
         {
-            question = textBoxQuestion.Text; //Get Question text
-            
+            frm.Location = this.Location;
+            frm.StartPosition = FormStartPosition.Manual;
+            frm.FormClosing += delegate { this.Show(); };
+            this.Hide();
+            frm.ShowDialog();
+        }
+        private void buttonDone_Click(object sender, EventArgs e)
+        {           
             this.Close();
         }
 
@@ -32,15 +38,16 @@ namespace Sweng421FinalProject
         {
             answer = new String[4] {answerBox1.Text, answerBox2.Text, answerBox3.Text, answerBox4.Text}; 
             if (answerRB1.Checked)
-                correctAnswer = answer[0];
+                correct = answer[0];
             else if (answerRB2.Checked)
-                correctAnswer = answer[1];
+                correct = answer[1];
             else if (answerRB3.Checked)
-                correctAnswer = answer[2];
+                correct = answer[2];
             else if (answerRB4.Checked)
-                correctAnswer = answer[3];
+                correct = answer[3];
             else
-                correctAnswer = "";
+                correct = "";
+            question = textBoxQuestion.Text; //Get Question text
             buttonDone.Show();
         }
     }

@@ -30,7 +30,6 @@ namespace Sweng421FinalProject
             frm.FormClosing += delegate { this.Show(); };
             this.Hide();
             frm.ShowDialog();
-            //this.Close();
         }
 
 
@@ -40,7 +39,7 @@ namespace Sweng421FinalProject
             String typeString = listViewQuestionsTypes.SelectedItems[0].Text; //Get string of selected question type. 
             QuestionIF nextQuestion = qFactory.createQuestion(typeString); //Run factory to create question
             nextQuestion.createQuiz(); //run questions create function to fill out questions values
-            subQuestions.Add(nextQuestion); //Add created question to subquesiotns
+            subQuestions.Add(nextQuestion); //Add created question to subquestions
             refreshQuestionList(); //Call refresh
         }
 

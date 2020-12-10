@@ -72,6 +72,7 @@
             this.listViewQuestions.Size = new System.Drawing.Size(134, 174);
             this.listViewQuestions.TabIndex = 2;
             this.listViewQuestions.UseCompatibleStateImageBehavior = false;
+            this.listViewQuestions.View = System.Windows.Forms.View.List;
             // 
             // listViewQuestionsTypes
             // 
@@ -81,6 +82,7 @@
             this.listViewQuestionsTypes.Size = new System.Drawing.Size(128, 199);
             this.listViewQuestionsTypes.TabIndex = 3;
             this.listViewQuestionsTypes.UseCompatibleStateImageBehavior = false;
+            this.listViewQuestionsTypes.View = System.Windows.Forms.View.List;
             // 
             // doneButton
             // 

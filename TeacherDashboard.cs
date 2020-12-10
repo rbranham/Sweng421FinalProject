@@ -10,6 +10,7 @@ namespace Sweng421FinalProject
 {
     public partial class TeacherDashboard : Form
     {
+        QuestionIF qif;
         public TeacherDashboard()
         {
             InitializeComponent();
@@ -30,8 +31,8 @@ namespace Sweng421FinalProject
 
         private void createClick(object sender, EventArgs e)
         {
-            //create new questiontype
-            openDashboard(new CompositeCreation());
+            qif = new Quiz();
+            qif.createQuiz();
         }
 
         private void logoutButton_Click(object sender, EventArgs e)

@@ -14,7 +14,7 @@ namespace Sweng421FinalProject
         public ResultsIF runQuiz();  //Run from student portal will call specific pop up and then return results
                                      //Should evenetualy return a results interface
 
-        public void createQuiz();  //Run from teacher portal to create questions and quizes
+        public void createQuiz();  //Run from teacher portal to create questions and quizzes
 
         public ResultsIF generateAnswerKey(); //Run to generate a ResultsIF with the correct answer.   
                                               //we may want to generate on creation, not sure. 
@@ -80,9 +80,7 @@ namespace Sweng421FinalProject
                 if (p.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
                     this.questionText = p.question; //Get Question value
-
-                    this.correctAnswer = p.correctAnswer; //Get correct answer value
-
+                    this.correctAnswer = p.correct; //Get correct answer value
                 }
 
             }
