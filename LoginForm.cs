@@ -20,11 +20,14 @@ namespace Sweng421FinalProject
         private int results;
         private bool tvalidID = false;
         private bool svalidID = false;
-        List<String> teachID = new List<String> { "12345", "23456", "34567", "45678", "56789", "67890" };
-        List<String> studentID = new List<String> { "9876", "8765", "7654", "6543", "5432", "4321" };
+        List<String> teachID;
+        List<String> studentID;
+        DBhandler databaseConnection; 
         public LoginForm()
         {
             InitializeComponent();
+
+            databaseConnection = DBhandler.getInstance(); //Get database connection
         }
 
         private void openDashboard(Form frm)
@@ -41,11 +44,13 @@ namespace Sweng421FinalProject
         private void student_Click(object sender, EventArgs e)
         {
             selection = "student";
+            studentID = databaseConnection.getstudentAccounts(); //Refresh student list
         }
 
         private void teacher_Click(object sender, EventArgs e)
         {
             selection = "teacher";
+            teachID = databaseConnection.getTeacherAccounts(); //Refresh teacher list
         }
 
         private void submit_Click(object sender, EventArgs e)
