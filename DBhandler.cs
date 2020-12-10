@@ -64,6 +64,21 @@ namespace Sweng421FinalProject
             return s;
         }  
 
+        public List<String> getQuestionTypes()
+        {
+            List<String> q = new List<String>();
+
+            Debug.WriteLine("Accessing Question Types");
+
+            foreach (String line in File.ReadLines(dbFolderString + "question_types.txt", Encoding.UTF8))
+            {
+                //add lines to list view
+                Debug.WriteLine("Added Question Type: " + line);
+                q.Add(line);
+            }
+
+            return q;
+        }
 
     }
 }

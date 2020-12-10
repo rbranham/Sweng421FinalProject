@@ -48,8 +48,6 @@ namespace Sweng421FinalProject
             this.Close();
         }
 
-            //Add created questtion to subquesiotns
-        }
 
     }
 }
