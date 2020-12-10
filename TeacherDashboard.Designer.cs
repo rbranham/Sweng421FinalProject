@@ -31,16 +31,13 @@
             this.DashboardLabel = new System.Windows.Forms.Label();
             this.listView1 = new System.Windows.Forms.ListView();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.createButton = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.selectButton = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
             this.button8 = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.textBox6 = new System.Windows.Forms.TextBox();
-            this.mcButton = new System.Windows.Forms.RadioButton();
-            this.compButton = new System.Windows.Forms.RadioButton();
+            this.logoutButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // DashboardLabel
@@ -72,14 +69,15 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "List of Quizzes";
             // 
-            // button1
+            // createButton
             // 
-            this.button1.Location = new System.Drawing.Point(205, 64);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "create";
-            this.button1.UseVisualStyleBackColor = true;
+            this.createButton.Location = new System.Drawing.Point(205, 64);
+            this.createButton.Name = "createButton";
+            this.createButton.Size = new System.Drawing.Size(75, 23);
+            this.createButton.TabIndex = 4;
+            this.createButton.Text = "create";
+            this.createButton.UseVisualStyleBackColor = true;
+            this.createButton.Click += new System.EventHandler(this.createClick);
             // 
             // button2
             // 
@@ -98,26 +96,6 @@
             this.button3.TabIndex = 4;
             this.button3.Text = "delete";
             this.button3.UseVisualStyleBackColor = true;
-            // 
-            // selectButton
-            // 
-            this.selectButton.Location = new System.Drawing.Point(385, 122);
-            this.selectButton.Name = "selectButton";
-            this.selectButton.Size = new System.Drawing.Size(75, 23);
-            this.selectButton.TabIndex = 4;
-            this.selectButton.Text = "Select";
-            this.selectButton.UseVisualStyleBackColor = true;
-            this.selectButton.Click += new System.EventHandler(this.selectClick);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(385, 64);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(61, 15);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Quiz Type";
             // 
             // button8
             // 
@@ -145,43 +123,28 @@
             this.textBox6.Size = new System.Drawing.Size(233, 23);
             this.textBox6.TabIndex = 8;
             // 
-            // mcButton
+            // logoutButton
             // 
-            this.mcButton.AutoSize = true;
-            this.mcButton.Location = new System.Drawing.Point(328, 93);
-            this.mcButton.Name = "mcButton";
-            this.mcButton.Size = new System.Drawing.Size(109, 19);
-            this.mcButton.TabIndex = 9;
-            this.mcButton.TabStop = true;
-            this.mcButton.Text = "Multiple Choice";
-            this.mcButton.UseVisualStyleBackColor = true;
-            // 
-            // compButton
-            // 
-            this.compButton.AutoSize = true;
-            this.compButton.Location = new System.Drawing.Point(443, 93);
-            this.compButton.Name = "compButton";
-            this.compButton.Size = new System.Drawing.Size(83, 19);
-            this.compButton.TabIndex = 10;
-            this.compButton.TabStop = true;
-            this.compButton.Text = "Composite";
-            this.compButton.UseVisualStyleBackColor = true;
+            this.logoutButton.Location = new System.Drawing.Point(713, 451);
+            this.logoutButton.Name = "logoutButton";
+            this.logoutButton.Size = new System.Drawing.Size(75, 23);
+            this.logoutButton.TabIndex = 9;
+            this.logoutButton.Text = "Logout";
+            this.logoutButton.UseVisualStyleBackColor = true;
+            this.logoutButton.Click += new System.EventHandler(this.logoutButton_Click);
             // 
             // TeacherDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 486);
-            this.Controls.Add(this.compButton);
-            this.Controls.Add(this.mcButton);
+            this.Controls.Add(this.logoutButton);
             this.Controls.Add(this.textBox6);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.button8);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.selectButton);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.createButton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.DashboardLabel);
@@ -197,15 +160,12 @@
         private System.Windows.Forms.Label DashboardLabel;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button createButton;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button selectButton;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.RadioButton mcButton;
-        private System.Windows.Forms.RadioButton compButton;
+        private System.Windows.Forms.Button logoutButton;
     }
 }

@@ -82,6 +82,7 @@ namespace Sweng421FinalProject
     public class MultipleChoiceQuestion : QuestionIF
     {
         String questionText;
+        String correctAnswer;
 
         //Need to call this to populate data
         public void createQuiz()
@@ -91,6 +92,7 @@ namespace Sweng421FinalProject
                 if (p.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
                     this.questionText = p.question; //Get Question value
+                    this.correctAnswer = p.correctAnswer; //Get correct answer value
                 }
 
             }
