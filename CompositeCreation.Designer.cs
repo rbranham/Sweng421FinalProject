@@ -33,6 +33,9 @@
             this.buttonAdd = new System.Windows.Forms.Button();
             this.listViewQuestions = new System.Windows.Forms.ListView();
             this.listViewQuestionsTypes = new System.Windows.Forms.ListView();
+
+            this.doneButton = new System.Windows.Forms.Button();
+
             this.SuspendLayout();
             // 
             // labelQuestions
@@ -49,9 +52,15 @@
             this.labelQuestionTypes.AutoSize = true;
             this.labelQuestionTypes.Location = new System.Drawing.Point(543, 53);
             this.labelQuestionTypes.Name = "labelQuestionTypes";
+
+            this.labelQuestionTypes.Size = new System.Drawing.Size(87, 15);
+            this.labelQuestionTypes.TabIndex = 0;
+            this.labelQuestionTypes.Text = "Question Types";
+
             this.labelQuestionTypes.Size = new System.Drawing.Size(92, 15);
             this.labelQuestionTypes.TabIndex = 0;
             this.labelQuestionTypes.Text = "Questions Types";
+
             // 
             // buttonAdd
             // 
@@ -81,11 +90,26 @@
             this.listViewQuestionsTypes.TabIndex = 3;
             this.listViewQuestionsTypes.UseCompatibleStateImageBehavior = false;
             // 
+
+            // doneButton
+            // 
+            this.doneButton.Location = new System.Drawing.Point(708, 415);
+            this.doneButton.Name = "doneButton";
+            this.doneButton.Size = new System.Drawing.Size(75, 23);
+            this.doneButton.TabIndex = 4;
+            this.doneButton.Text = "Done";
+            this.doneButton.UseVisualStyleBackColor = true;
+            this.doneButton.Click += new System.EventHandler(this.doneButton_Click);
+            //
             // CompositeCreation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+
+            this.Controls.Add(this.doneButton);
+
+
             this.Controls.Add(this.listViewQuestionsTypes);
             this.Controls.Add(this.listViewQuestions);
             this.Controls.Add(this.buttonAdd);
@@ -105,5 +129,8 @@
         private System.Windows.Forms.Button buttonAdd;
         private System.Windows.Forms.ListView listViewQuestions;
         private System.Windows.Forms.ListView listViewQuestionsTypes;
+
+        private System.Windows.Forms.Button doneButton;
+
     }
 }

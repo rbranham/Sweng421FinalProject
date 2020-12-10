@@ -31,7 +31,6 @@
             this.labelQuestion = new System.Windows.Forms.Label();
             this.textBoxQuestion = new System.Windows.Forms.TextBox();
             this.buttonDone = new System.Windows.Forms.Button();
-
             this.answerRB1 = new System.Windows.Forms.RadioButton();
             this.answerRB2 = new System.Windows.Forms.RadioButton();
             this.answerRB3 = new System.Windows.Forms.RadioButton();
@@ -42,17 +41,14 @@
             this.answerBox4 = new System.Windows.Forms.TextBox();
             this.numAnswers = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
+            this.applyButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numAnswers)).BeginInit();
-
             this.SuspendLayout();
             // 
             // labelQuestion
             // 
             this.labelQuestion.AutoSize = true;
-
-            this.labelQuestion.Location = new System.Drawing.Point(47, 33);
             this.labelQuestion.Location = new System.Drawing.Point(33, 21);
-
             this.labelQuestion.Name = "labelQuestion";
             this.labelQuestion.Size = new System.Drawing.Size(61, 15);
             this.labelQuestion.TabIndex = 0;
@@ -60,15 +56,9 @@
             // 
             // textBoxQuestion
             // 
-
-            this.textBoxQuestion.Location = new System.Drawing.Point(120, 30);
-            this.textBoxQuestion.Name = "textBoxQuestion";
-            this.textBoxQuestion.Size = new System.Drawing.Size(647, 23);
-
             this.textBoxQuestion.Location = new System.Drawing.Point(149, 21);
             this.textBoxQuestion.Name = "textBoxQuestion";
             this.textBoxQuestion.Size = new System.Drawing.Size(268, 23);
-
             this.textBoxQuestion.TabIndex = 1;
             // 
             // buttonDone
@@ -81,7 +71,6 @@
             this.buttonDone.UseVisualStyleBackColor = true;
             this.buttonDone.Click += new System.EventHandler(this.buttonDone_Click);
             // 
-
             // answerRB1
             // 
             this.answerRB1.AutoSize = true;
@@ -176,12 +165,22 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Number of Answers Required:";
             // 
+            // applyButton
+            // 
+            this.applyButton.Location = new System.Drawing.Point(620, 403);
+            this.applyButton.Name = "applyButton";
+            this.applyButton.Size = new System.Drawing.Size(75, 23);
+            this.applyButton.TabIndex = 8;
+            this.applyButton.Text = "Apply";
+            this.applyButton.UseVisualStyleBackColor = true;
+            this.applyButton.Click += new System.EventHandler(this.applyButton_Click);
+            // 
             // MultipleChoiceCreation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-
+            this.Controls.Add(this.applyButton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.numAnswers);
             this.Controls.Add(this.answerBox4);
@@ -192,15 +191,12 @@
             this.Controls.Add(this.answerRB3);
             this.Controls.Add(this.answerRB2);
             this.Controls.Add(this.answerRB1);
-
             this.Controls.Add(this.buttonDone);
             this.Controls.Add(this.textBoxQuestion);
             this.Controls.Add(this.labelQuestion);
             this.Name = "MultipleChoiceCreation";
             this.Text = "MultipleChoiceCreation";
-
             ((System.ComponentModel.ISupportInitialize)(this.numAnswers)).EndInit();
-
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -222,6 +218,6 @@
         private System.Windows.Forms.TextBox answerBox4;
         private System.Windows.Forms.NumericUpDown numAnswers;
         private System.Windows.Forms.Label label1;
-
+        private System.Windows.Forms.Button applyButton;
     }
 }
