@@ -10,9 +10,21 @@ namespace Sweng421FinalProject
 {
     public partial class StudentDashboard : Form
     {
+        List<QuestionIF> questions = new List<QuestionIF>();
         public StudentDashboard()
         {
             InitializeComponent();
+        }
+
+        private void doneButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void answerButton_Click(object sender, EventArgs e)
+        {
+            String aQuestion = listQuestionsToAnswer.SelectedItems[0].Text;
+
         }
     }
 }

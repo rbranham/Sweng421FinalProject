@@ -48,6 +48,7 @@ namespace Sweng421FinalProject
             else
                 correct = "";
             question = textBoxQuestion.Text; //Get Question text
+ 
             buttonDone.Show();
         }
     }
