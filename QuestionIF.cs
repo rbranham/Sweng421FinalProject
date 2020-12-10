@@ -18,6 +18,8 @@ namespace Sweng421FinalProject
 
         public ResultsIF generateAnswerKey(); //Run to generate a ResultsIF with the correct answer.   
                                               //we may want to generate on creation, not sure. 
+
+        public String getName(); //Used to get name string
     }
 
 
@@ -43,6 +45,11 @@ namespace Sweng421FinalProject
         public ResultsIF generateAnswerKey()
         {
             throw new NotImplementedException();
+        }
+
+        public string getName()
+        {
+            return "Compound Questions";
         }
 
         public ResultsIF runQuiz()
@@ -85,6 +92,11 @@ namespace Sweng421FinalProject
         public ResultsIF generateAnswerKey()
         {
             throw new NotImplementedException();
+        }
+
+        public string getName()
+        {
+            return questionText; 
         }
 
         public ResultsIF runQuiz()

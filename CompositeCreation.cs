@@ -39,10 +39,9 @@ namespace Sweng421FinalProject
         {
             String typeString = listViewQuestionsTypes.SelectedItems[0].Text; //Get string of selected question type. 
             QuestionIF nextQuestion = qFactory.createQuestion(typeString); //Run factory to create question
-
             nextQuestion.createQuiz(); //run questions create function to fill out questions values
-
             subQuestions.Add(nextQuestion); //Add created question to subquesiotns
+            refreshQuestionList(); //Call refresh
         }
 
         private void doneButton_Click(object sender, EventArgs e)
@@ -61,6 +60,22 @@ namespace Sweng421FinalProject
             }
 
             //Can sort here if needed
+        }
+
+        /*
+         * Function to refresh question list
+         */
+        private void refreshQuestionList()
+        {
+            listViewQuestions.Clear(); 
+
+            int i = 0; 
+            foreach(QuestionIF q in subQuestions)
+            {
+                i++; 
+                listViewQuestions.Items.Add(i + ". " + q.getName());
+            }
+
         }
     }
 }

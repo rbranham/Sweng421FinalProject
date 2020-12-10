@@ -32,6 +32,7 @@ namespace Sweng421FinalProject
             return INSTANCE; 
         }
 
+        //With a real database would make sql calls inside these methods instead of reading files
 
         public List<String> getTeacherAccounts() {
             List<String> t = new List<String>();
@@ -47,7 +48,7 @@ namespace Sweng421FinalProject
 
             return t;
 
-        }  //With real database would make sql call here instead
+        }  
 
         public List<String> getstudentAccounts() {
             List<String> s = new List<String>();
