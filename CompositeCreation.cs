@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using Sweng421FinalProject;
-using static Sweng421FinalProject.Program;
+
 
 namespace Sweng421FinalProject
 {
