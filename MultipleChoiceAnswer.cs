@@ -10,10 +10,16 @@ namespace Sweng421FinalProject
 {
     public partial class MultipleChoiceAnswer : Form
     {
+        List<QuestionIF> questions = new List<QuestionIF>();
         public MultipleChoiceAnswer()
         {
             InitializeComponent();
+            
             submitButton.Hide();
+        }
+
+        private void checkAnswer(object sender, EventArgs e)
+        {
 
         }
     }

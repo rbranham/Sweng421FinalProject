@@ -32,7 +32,7 @@
             this.doneButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.listQuestionsToAnswer = new System.Windows.Forms.ListView();
-            this.answerButton = new System.Windows.Forms.Button();
+            this.startButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // DashboardLabel
@@ -74,22 +74,22 @@
             this.listQuestionsToAnswer.UseCompatibleStateImageBehavior = false;
             this.listQuestionsToAnswer.View = System.Windows.Forms.View.List;
             // 
-            // answerButton
+            // startButton
             // 
-            this.answerButton.Location = new System.Drawing.Point(184, 77);
-            this.answerButton.Name = "answerButton";
-            this.answerButton.Size = new System.Drawing.Size(75, 23);
-            this.answerButton.TabIndex = 4;
-            this.answerButton.Text = "Start";
-            this.answerButton.UseVisualStyleBackColor = true;
-            this.answerButton.Click += new System.EventHandler(this.answerButton_Click);
+            this.startButton.Location = new System.Drawing.Point(184, 77);
+            this.startButton.Name = "startButton";
+            this.startButton.Size = new System.Drawing.Size(75, 23);
+            this.startButton.TabIndex = 4;
+            this.startButton.Text = "Start";
+            this.startButton.UseVisualStyleBackColor = true;
+            this.startButton.Click += new System.EventHandler(this.startButton_Click);
             // 
             // StudentDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(794, 445);
-            this.Controls.Add(this.answerButton);
+            this.Controls.Add(this.startButton);
             this.Controls.Add(this.listQuestionsToAnswer);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.doneButton);
@@ -107,6 +107,6 @@
         private System.Windows.Forms.Button doneButton;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ListView listQuestionsToAnswer;
-        private System.Windows.Forms.Button answerButton;
+        private System.Windows.Forms.Button startButton;
     }
 }
