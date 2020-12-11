@@ -10,7 +10,8 @@ namespace Sweng421FinalProject
 {
     public partial class MC : UserControl
     {
-        public String[] answer; 
+        public String[] answer;
+        public String correctAns;
         public MC()
         {
             InitializeComponent();
@@ -68,6 +69,22 @@ namespace Sweng421FinalProject
             set
             {
                 textBox5.Text = null;
+            }
+        }
+        public String addCorrectAnswer
+        {
+            get
+            {
+                if (radioButton1.Checked)
+                    return (String)textBox2.Text;
+                else if (radioButton2.Checked)
+                    return (String)textBox3.Text;
+                else if (radioButton3.Checked)
+                    return (String)textBox4.Text;
+                else if (radioButton4.Checked)
+                    return (String)textBox5.Text;
+                else
+                    return "";
             }
         }
     }
