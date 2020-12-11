@@ -69,7 +69,6 @@ namespace Sweng421FinalProject
             //add factory here for below to create question type and instantiate for use 
             if (questionType == "Multiple Choice")
             {
-                mc = new MultipleChoiceQuestion();
                 tf1.Hide();
                 mc1.Show();
             }
@@ -89,6 +88,7 @@ namespace Sweng421FinalProject
         private void addButton_Click(object sender, EventArgs e)
         {
             //get information from Multiple Choice View
+            mc = new MultipleChoiceQuestion();
             quizName = textBox1.Text;
             mc.questionText = mc1.addQuestion;
             mc.answers[0] = mc1.addAnswer1;
