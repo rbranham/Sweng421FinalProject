@@ -35,6 +35,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.closeButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // TeacherButton
@@ -98,11 +99,22 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.submit_Click);
             // 
+            // closeButton
+            // 
+            this.closeButton.Location = new System.Drawing.Point(266, 115);
+            this.closeButton.Name = "closeButton";
+            this.closeButton.Size = new System.Drawing.Size(75, 23);
+            this.closeButton.TabIndex = 4;
+            this.closeButton.Text = "Close";
+            this.closeButton.UseVisualStyleBackColor = true;
+            this.closeButton.Click += new System.EventHandler(this.close_Click);
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(353, 150);
+            this.Controls.Add(this.closeButton);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label2);
@@ -126,6 +138,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button closeButton;
     }
 }
 

@@ -62,7 +62,7 @@ namespace Sweng421FinalProject
             frm.FormClosing += delegate { this.Show(); };
             this.Hide();
             frm.ShowDialog();
-            this.Close(); //Doesn't close until after dashboard... somewhat waste of resources
+            //this.Close(); //Doesn't close until after dashboard... somewhat waste of resources
             // Link to look into: https://social.msdn.microsoft.com/Forums/en-US/0333e0c3-1a86-4cf6-822e-9ec23dc766e6/how-to-switch-between-c-winform?forum=winforms
         }
 
@@ -162,6 +162,11 @@ namespace Sweng421FinalProject
                     textBox2.Text = "Invalid ID, try again!";
             }
             */
+        }
+
+        private void close_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

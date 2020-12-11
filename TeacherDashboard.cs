@@ -10,11 +10,14 @@ namespace Sweng421FinalProject
 {
     public partial class TeacherDashboard : Form
     {
-        QuestionIF qif;
-        String studentID;
+        public List<QuestionIF> quizzes; 
+        public QuestionIF qif;
+        public String studentID;
         public TeacherDashboard()
         {
             InitializeComponent();
+            quizCreation1.Hide();
+            //quizzes = new List<QuestionIF>();//init
         }
 
         private void TeacherDashboard_Load(object sender, EventArgs e)
@@ -32,8 +35,7 @@ namespace Sweng421FinalProject
 
         private void createClick(object sender, EventArgs e)
         {
-            qif = new Quiz();
-            qif.createQuiz();
+            quizCreation1.Show();
         }
 
         private void logoutButton_Click(object sender, EventArgs e)
@@ -42,8 +44,7 @@ namespace Sweng421FinalProject
         }
         private void assignButton_Click(object sender, EventArgs e)
         {
-            String quiz = listView1.SelectedItems[0].Text;
-            openDashboard(new AssignStudent()); //temporary until i can figure out better implementation
+            openDashboard(new AssignStudent()); //open new AssignStudent dashboard
         }
     }
 }
