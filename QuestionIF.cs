@@ -73,8 +73,8 @@ namespace Sweng421FinalProject
 
     public class MultipleChoiceQuestion : QuestionIF
     {
-        String questionText;
-        String correctAnswer;
+        public String questionText;
+        public String correctAnswer;
 
 
         //Need to call this to populate data

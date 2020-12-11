@@ -17,6 +17,7 @@ namespace Sweng421FinalProject
         {
             InitializeComponent();
             quizCreation1.Hide();
+            mc1.Hide();
             //quizzes = new List<QuestionIF>();//init
         }
 
@@ -45,6 +46,11 @@ namespace Sweng421FinalProject
         private void assignButton_Click(object sender, EventArgs e)
         {
             openDashboard(new AssignStudent()); //open new AssignStudent dashboard
+        }
+
+        private void quizCreation1_Load(object sender, EventArgs e)
+        {
+           
         }
     }
 }

@@ -38,6 +38,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.quizCreation1 = new Sweng421FinalProject.QuizCreation();
+            this.mc1 = new Sweng421FinalProject.MC();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -128,11 +129,12 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.mc1);
             this.panel2.Controls.Add(this.quizCreation1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(208, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(521, 503);
+            this.panel2.Size = new System.Drawing.Size(529, 503);
             this.panel2.TabIndex = 15;
             // 
             // quizCreation1
@@ -141,12 +143,20 @@
             this.quizCreation1.Name = "quizCreation1";
             this.quizCreation1.Size = new System.Drawing.Size(177, 482);
             this.quizCreation1.TabIndex = 0;
+            this.quizCreation1.Load += new System.EventHandler(this.quizCreation1_Load);
+            // 
+            // mc1
+            // 
+            this.mc1.Location = new System.Drawing.Point(183, 0);
+            this.mc1.Name = "mc1";
+            this.mc1.Size = new System.Drawing.Size(334, 491);
+            this.mc1.TabIndex = 1;
             // 
             // TeacherDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(729, 503);
+            this.ClientSize = new System.Drawing.Size(737, 503);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "TeacherDashboard";
@@ -170,5 +180,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private QuizCreation quizCreation1;
+        private MC mc1;
     }
 }

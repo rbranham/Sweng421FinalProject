@@ -58,6 +58,7 @@
             this.Controls.Add(this.label1);
             this.Name = "QuizCreation";
             this.Size = new System.Drawing.Size(177, 503);
+            this.Load += new System.EventHandler(this.QuizCreation_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
