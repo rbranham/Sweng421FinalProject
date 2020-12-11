@@ -48,11 +48,11 @@
             // labelQuestionTypes
             // 
             this.labelQuestionTypes.AutoSize = true;
-            this.labelQuestionTypes.Location = new System.Drawing.Point(543, 53);
+            this.labelQuestionTypes.Location = new System.Drawing.Point(542, 53);
             this.labelQuestionTypes.Name = "labelQuestionTypes";
-            this.labelQuestionTypes.Size = new System.Drawing.Size(92, 15);
+            this.labelQuestionTypes.Size = new System.Drawing.Size(87, 15);
             this.labelQuestionTypes.TabIndex = 0;
-            this.labelQuestionTypes.Text = "Questions Types";
+            this.labelQuestionTypes.Text = "Question Types";
             // 
             // buttonAdd
             // 
@@ -77,9 +77,9 @@
             // listViewQuestionsTypes
             // 
             this.listViewQuestionsTypes.HideSelection = false;
-            this.listViewQuestionsTypes.Location = new System.Drawing.Point(408, 106);
+            this.listViewQuestionsTypes.Location = new System.Drawing.Point(469, 106);
             this.listViewQuestionsTypes.Name = "listViewQuestionsTypes";
-            this.listViewQuestionsTypes.Size = new System.Drawing.Size(263, 174);
+            this.listViewQuestionsTypes.Size = new System.Drawing.Size(185, 174);
             this.listViewQuestionsTypes.TabIndex = 3;
             this.listViewQuestionsTypes.UseCompatibleStateImageBehavior = false;
             this.listViewQuestionsTypes.View = System.Windows.Forms.View.List;

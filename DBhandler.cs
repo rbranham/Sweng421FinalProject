@@ -83,23 +83,6 @@ namespace Sweng421FinalProject
             return q;
             
         }
-        /*
-         * This DB list needs created, it will hold the quizzes that have been created
-         */
-        public async Task<List<String>> getQuiz()
-        {
-            List<String> q = new List<String>();
-            //fire store way
-            CollectionReference typesRef = db.Collection("quiz");
-            QuerySnapshot snapshot = await typesRef.GetSnapshotAsync();
-            foreach (DocumentSnapshot document in snapshot.Documents)
-            {
-                Dictionary<string, object> documentDictionary = document.ToDictionary();
-                q.Add(documentDictionary["Name"].ToString());
-            }
 
-            return q;
-
-        }
     }
 }
