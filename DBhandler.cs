@@ -18,7 +18,7 @@ namespace Sweng421FinalProject
 
         private static DBhandler INSTANCE = null;
         FirestoreDb db; 
-        private DBhandler()
+        public DBhandler()
         {
             db = FirestoreDb.Create("sweng421-finalproject"); //set up connection
         }
@@ -34,8 +34,47 @@ namespace Sweng421FinalProject
             return INSTANCE; 
         }
 
+        public async Task<List<Teacher>> getTeacherAccounts()
+        {
+            List<Teacher> q = new List<Teacher>();
+            //fire store way
+            CollectionReference typesRef = db.Collection("teacherAccounts");
+            QuerySnapshot snapshot = await typesRef.GetSnapshotAsync();
+            foreach (DocumentSnapshot document in snapshot.Documents)
+            {
+                Dictionary<string, object> documentDictionary = document.ToDictionary();
+                q.Add(new Teacher(
+                    documentDictionary["Name"].ToString(), 
+                    documentDictionary["Username"].ToString()
+                    ));
+            }
+
+            return q;
+        }
+
+        public async Task<List<Student>> getStudentAccounts()
+        {
+            List<Student> q = new List<Student>();
+            //fire store way
+            CollectionReference typesRef = db.Collection("teacherAccounts");
+            QuerySnapshot snapshot = await typesRef.GetSnapshotAsync();
+            foreach (DocumentSnapshot document in snapshot.Documents)
+            {
+                Dictionary<string, object> documentDictionary = document.ToDictionary();
+                q.Add(new Student(
+                    documentDictionary["Name"].ToString(),
+                    documentDictionary["Username"].ToString()
+                    ));
+
+                Debug.WriteLine("Added teacher with userName: " + documentDictionary["Username"].ToString());
+            }
+
+            return q;
+        }
+
         //With a real database would make sql calls inside these methods instead of reading files
 
+        /*
         public List<String> getTeacherAccounts() {
             List<String> t = new List<String>();
 
@@ -52,7 +91,7 @@ namespace Sweng421FinalProject
 
         }  
 
-        public List<String> getstudentAccounts() {
+        public List<String> getStudentAccounts() {
             List<String> s = new List<String>();
 
             Debug.WriteLine("Accessing Student Accounts");
@@ -66,6 +105,7 @@ namespace Sweng421FinalProject
 
             return s;
         }  
+        */
 
         public async Task<List<String>> getQuestionTypes()
         {

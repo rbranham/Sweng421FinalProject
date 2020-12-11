@@ -75,7 +75,7 @@ namespace Sweng421FinalProject
          */
         private async void setTypeList()
         {
-            DBhandler dbConnection = DBhandler.getInstance();
+            DBhandler dbConnection = new DBhandler();
             List<String> qTypes = await dbConnection.getQuestionTypes();
 
             foreach (String t in qTypes)

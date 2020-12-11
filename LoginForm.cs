@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -13,23 +14,45 @@ namespace Sweng421FinalProject
     public partial class LoginForm : Form
     {
         private String selection = "";
-        private String text1 = "";
-        private String text2 = "";
-        private int id = 0;
-        private int resultt;
-        private int results;
-        private bool tvalidID = false;
-        private bool svalidID = false;
-        List<String> teachID;
-        List<String> studentID;
-        DBhandler databaseConnection; 
+        //private int id = 0;
+        //private int resultt;
+        //private int results;
+        //private bool tvalidID = false;
+        //private bool svalidID = false;
+        List<Teacher> teachList;
+        List<Student> studentList;
+        DBhandler db; 
         public LoginForm()
         {
             InitializeComponent();
 
-            databaseConnection = DBhandler.getInstance(); //Get database connection
-            studentID = databaseConnection.getstudentAccounts(); //Refresh student list
-            teachID = databaseConnection.getTeacherAccounts(); //Refresh teacher list
+            db = new DBhandler(); //Get database connection
+
+            //Call two async tasks to get in data
+            //getAccountLists(databaseConnection);
+            //getStudentLists(databaseConnection); 
+            getAccountLists();
+            getStudentLists(); 
+        }
+
+        private async void getAccountLists()
+        {
+            /*
+            var teacherTask = db.getTeacherAccounts(); //start task
+            teachList = await teacherTask; //Awaits return of task
+            */
+            teachList = await db.getTeacherAccounts();
+            Debug.WriteLine("Got teachers list");
+        }
+
+        private async void getStudentLists()
+        {
+            /*
+            var studentTask = db.getStudentAccounts(); //starts task
+            studentList = await studentTask; //Awaits return of task
+            */
+            studentList = await db.getStudentAccounts();
+            Debug.WriteLine("Got student list");
         }
 
         private void openDashboard(Form frm)
@@ -57,10 +80,67 @@ namespace Sweng421FinalProject
 
         private void submit_Click(object sender, EventArgs e)
         {
-            text1 = textBox1.Text;
-            text2 = textBox2.Text;
-            resultt = teachID.IndexOf(text1);
-            results = studentID.IndexOf(text2);
+            String textTeacherBox = textBox1.Text;
+            String textStudentBox = textBox2.Text;
+
+            if (selection == "teacher")
+            {
+
+                Debug.WriteLine("Selection was teacher");
+                Teacher t; 
+                try {
+                    t = teachList.First(Teacher => Teacher.getUserName() == textTeacherBox);
+                    Debug.WriteLine("first teacher is: " + t.getName());
+                } catch
+                {
+                    t = null; 
+                    Debug.WriteLine("teacher was empty ");
+                }
+
+
+                if (t != null)
+                {
+                    Debug.WriteLine("Attempting to open teacher dashboard");
+                    openDashboard(new TeacherDashboard());  //Open teacher dashboard form
+                } else
+                {
+                    textBox1.Text = "Invalid ID, try again!";
+                }
+                
+            }
+            else if (selection == "student")
+            {
+                Student s;
+
+                try
+                {
+                    s = studentList.First(Student => Student.getUserName() == textStudentBox);
+                    Debug.WriteLine("first teacher is: " + s.getName());
+                }
+                catch { s = null; } //If can't find  set as null
+
+                if (s != null)
+                {
+                    openDashboard(new StudentDashboard());  //Open student dashboard form
+                }
+                else
+                {
+                    textBox2.Text = "Invalid ID, try again!";
+                }
+
+                
+            }
+            else
+            {
+               
+               textBox1.Text = "Please Select a account type";
+               
+            }
+
+            //old
+            /*
+            resultt = teachList.IndexOf(text1);
+            results = studentList.IndexOf(text2);
 
             if (resultt >= 0)
                 tvalidID = true;
@@ -81,6 +161,7 @@ namespace Sweng421FinalProject
                 if (selection == "student")
                     textBox2.Text = "Invalid ID, try again!";
             }
+            */
         }
     }
 }
