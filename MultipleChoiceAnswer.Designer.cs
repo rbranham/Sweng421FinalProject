@@ -45,8 +45,10 @@
             this.answer1Button.Name = "answer1Button";
             this.answer1Button.Size = new System.Drawing.Size(240, 40);
             this.answer1Button.TabIndex = 0;
+            this.answer1Button.Tag = "1";
             this.answer1Button.Text = "Answer1";
             this.answer1Button.UseVisualStyleBackColor = true;
+            this.answer1Button.Click += new System.EventHandler(this.checkAnswer);
             // 
             // answer2Button
             // 
@@ -54,8 +56,10 @@
             this.answer2Button.Name = "answer2Button";
             this.answer2Button.Size = new System.Drawing.Size(240, 40);
             this.answer2Button.TabIndex = 1;
+            this.answer2Button.Tag = "2";
             this.answer2Button.Text = "Answer2";
             this.answer2Button.UseVisualStyleBackColor = true;
+            this.answer2Button.Click += new System.EventHandler(this.checkAnswer);
             // 
             // answer4Button
             // 
@@ -63,8 +67,10 @@
             this.answer4Button.Name = "answer4Button";
             this.answer4Button.Size = new System.Drawing.Size(240, 40);
             this.answer4Button.TabIndex = 2;
+            this.answer4Button.Tag = "4";
             this.answer4Button.Text = "Answer4";
             this.answer4Button.UseVisualStyleBackColor = true;
+            this.answer4Button.Click += new System.EventHandler(this.checkAnswer);
             // 
             // answer3Button
             // 
@@ -72,8 +78,10 @@
             this.answer3Button.Name = "answer3Button";
             this.answer3Button.Size = new System.Drawing.Size(240, 40);
             this.answer3Button.TabIndex = 3;
+            this.answer3Button.Tag = "3";
             this.answer3Button.Text = "Answer3";
             this.answer3Button.UseVisualStyleBackColor = true;
+            this.answer3Button.Click += new System.EventHandler(this.checkAnswer);
             // 
             // questionText
             // 

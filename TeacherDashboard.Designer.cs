@@ -32,11 +32,7 @@
             this.listView1 = new System.Windows.Forms.ListView();
             this.label1 = new System.Windows.Forms.Label();
             this.createButton = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.label11 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.assignButton = new System.Windows.Forms.Button();
             this.logoutButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -44,7 +40,7 @@
             // 
             this.DashboardLabel.AutoSize = true;
             this.DashboardLabel.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.DashboardLabel.Location = new System.Drawing.Point(294, 9);
+            this.DashboardLabel.Location = new System.Drawing.Point(124, 9);
             this.DashboardLabel.Name = "DashboardLabel";
             this.DashboardLabel.Size = new System.Drawing.Size(193, 28);
             this.DashboardLabel.TabIndex = 0;
@@ -55,9 +51,10 @@
             this.listView1.HideSelection = false;
             this.listView1.Location = new System.Drawing.Point(13, 64);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(185, 212);
+            this.listView1.Size = new System.Drawing.Size(263, 212);
             this.listView1.TabIndex = 1;
             this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.List;
             // 
             // label1
             // 
@@ -71,7 +68,7 @@
             // 
             // createButton
             // 
-            this.createButton.Location = new System.Drawing.Point(205, 64);
+            this.createButton.Location = new System.Drawing.Point(294, 64);
             this.createButton.Name = "createButton";
             this.createButton.Size = new System.Drawing.Size(75, 23);
             this.createButton.TabIndex = 4;
@@ -79,49 +76,15 @@
             this.createButton.UseVisualStyleBackColor = true;
             this.createButton.Click += new System.EventHandler(this.createClick);
             // 
-            // button2
+            // assignButton
             // 
-            this.button2.Location = new System.Drawing.Point(205, 93);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "edit";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(205, 122);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 4;
-            this.button3.Text = "delete";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button8
-            // 
-            this.button8.Location = new System.Drawing.Point(13, 283);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(185, 23);
-            this.button8.TabIndex = 6;
-            this.button8.Text = "Assign to Student?";
-            this.button8.UseVisualStyleBackColor = true;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label11.Location = new System.Drawing.Point(294, 246);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(71, 15);
-            this.label11.TabIndex = 7;
-            this.label11.Text = "Quiz Name:";
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(372, 246);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(233, 23);
-            this.textBox6.TabIndex = 8;
+            this.assignButton.Location = new System.Drawing.Point(13, 283);
+            this.assignButton.Name = "assignButton";
+            this.assignButton.Size = new System.Drawing.Size(263, 23);
+            this.assignButton.TabIndex = 6;
+            this.assignButton.Text = "Assign to Student?";
+            this.assignButton.UseVisualStyleBackColor = true;
+            this.assignButton.Click += new System.EventHandler(this.assignButton_Click);
             // 
             // logoutButton
             // 
@@ -137,13 +100,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 486);
+            this.ClientSize = new System.Drawing.Size(381, 377);
             this.Controls.Add(this.logoutButton);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.button8);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.assignButton);
             this.Controls.Add(this.createButton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.listView1);
@@ -161,11 +120,7 @@
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button createButton;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.Button assignButton;
         private System.Windows.Forms.Button logoutButton;
     }
 }
