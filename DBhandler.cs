@@ -63,6 +63,21 @@ namespace Sweng421FinalProject
 
         }
 
+        public async Task<List<String>> getAllQuizzes()
+        {
+            List<String> quizList = new List<String>();
+
+            CollectionReference collection = db.Collection("Quizes"); //Parent level quiz collection
+            Query query = collection; //sets parameters to Get all quiz documents
+            QuerySnapshot snap = await query.GetSnapshotAsync();  //Get the documents 
+
+            foreach (DocumentSnapshot quizSnap in snap.Documents)
+            {
+                quizList.Add(quizSnap.GetValue<String>("Quizname"));
+            }
+
+            return quizList;
+        }
         
         public async Task<Quiz> getQuiz(String name)
         {
