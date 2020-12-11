@@ -101,6 +101,12 @@ namespace Sweng421FinalProject
             //add question to Quiz list
             quiz.subQuestions.Add(mc);
 
+            //once added, clear the question text boxes
+            mc1.addQuestion = null;
+            mc1.addAnswer1 = null;
+            mc1.addAnswer2 = null;
+            mc1.addAnswer3 = null;
+            mc1.addAnswer4 = null;
             //show done button so user can stop adding questions
             doneButton.Show();
         }
