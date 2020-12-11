@@ -25,11 +25,13 @@ namespace Sweng421FinalProject
 
     public class Quiz : QuestionIF
     {
-        List<QuestionIF> subQuestions;
+        public String name; 
+        public List<QuestionIF> subQuestions;
 
 
         public void createQuiz()
         {
+            this.name = "Compound Questions";  //Should change to be and input
 
             using (CompositeCreation p = new CompositeCreation()) //Launch creation interface dialog
             {
@@ -49,7 +51,7 @@ namespace Sweng421FinalProject
 
         public string getName()
         {
-            return "Compound Questions";
+            return name; ;
         }
 
         public ResultsIF runQuiz()
