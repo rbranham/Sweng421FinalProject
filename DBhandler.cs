@@ -43,17 +43,10 @@ namespace Sweng421FinalProject
 
             Debug.WriteLine("Adding quiz with: " + qList.Count + " Questions");
 
-            for(int i = 0; i < qList.Count; i++) //Debug only to see if different quizes. 
-            {
-                Debug.WriteLine("Question " + i + " is: " + qList[i].getName());
-            }
-
             foreach(QuestionIF question in qList)
             {
                 if (question is MultipleChoiceQuestion)
                 {
-                    Debug.WriteLine("from addquiz, Sending MC Question: " + question.getName());
-
                     AddMultipleChoice((MultipleChoiceQuestion)question, questionSubcollection);
                 } //Would add more question types below
                 else
