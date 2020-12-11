@@ -69,7 +69,7 @@
             this.listViewQuestions.HideSelection = false;
             this.listViewQuestions.Location = new System.Drawing.Point(88, 106);
             this.listViewQuestions.Name = "listViewQuestions";
-            this.listViewQuestions.Size = new System.Drawing.Size(134, 174);
+            this.listViewQuestions.Size = new System.Drawing.Size(262, 174);
             this.listViewQuestions.TabIndex = 2;
             this.listViewQuestions.UseCompatibleStateImageBehavior = false;
             this.listViewQuestions.View = System.Windows.Forms.View.List;
@@ -77,9 +77,9 @@
             // listViewQuestionsTypes
             // 
             this.listViewQuestionsTypes.HideSelection = false;
-            this.listViewQuestionsTypes.Location = new System.Drawing.Point(543, 106);
+            this.listViewQuestionsTypes.Location = new System.Drawing.Point(408, 106);
             this.listViewQuestionsTypes.Name = "listViewQuestionsTypes";
-            this.listViewQuestionsTypes.Size = new System.Drawing.Size(128, 199);
+            this.listViewQuestionsTypes.Size = new System.Drawing.Size(263, 174);
             this.listViewQuestionsTypes.TabIndex = 3;
             this.listViewQuestionsTypes.UseCompatibleStateImageBehavior = false;
             this.listViewQuestionsTypes.View = System.Windows.Forms.View.List;
