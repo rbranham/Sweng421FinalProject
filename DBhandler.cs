@@ -45,6 +45,10 @@ namespace Sweng421FinalProject
                 {
                     AddMultipleChoice((MultipleChoiceQuestion)question, questionSubcollection);
                 } //Would add more question types below
+                else
+                {
+                    throw new NotSupportedException(); 
+                }
             }
         }
 
@@ -53,13 +57,63 @@ namespace Sweng421FinalProject
             Dictionary<string, object> questionData = new Dictionary<string, object>()
             {
                 {"Type", "MC" },   
-                {"Questions", mc.questionText }
+                {"Question", mc.questionText }
             };
             await quizRef.AddAsync(questionData); 
 
         }
 
+        
+        public async Task<Quiz> getQuiz(String name)
+        {
+            Quiz q = new Quiz();  //Create the quiz to return
 
+            //Logic to get the snapshot of the quizes documents
+            CollectionReference collection = db.Collection("Quizes"); //Parent level quiz collection
+            Query query = collection.WhereEqualTo("QuizName", name); //sets parameters to Get all quizes with the same name
+            QuerySnapshot snap = await query.GetSnapshotAsync();  //Get the documents 
+            DocumentSnapshot docSnap = snap[0]; //Get first document in the snap shot
+
+            q.name = docSnap.GetValue<String>("QuizName"); // //Gets the quiz name
+
+            //Get subcolleciton
+            CollectionReference questionCollection = docSnap.Reference.Collection("Questions");  //Gets the sub collection
+            Query questionQuery = questionCollection;  //Create query
+            QuerySnapshot questionQuerySnap = await questionQuery.GetSnapshotAsync();  //Run query. 
+
+            List<QuestionIF> questionList = new List<QuestionIF>(); 
+            foreach (DocumentSnapshot questionSnap in questionQuerySnap.Documents)
+            {
+                QuestionIF nextQ; 
+                //Runs for each quiz within
+                string type = questionSnap.GetValue<String>("Type"); 
+                if(type == "MC")
+                {
+                    nextQ = parseMCQuestion(questionSnap); //Call get for MC assign to next Q
+                } else
+                {
+                    throw new NotSupportedException(); 
+                }
+
+                questionList.Add(nextQ);
+            }
+
+            q.subQuestions = questionList;  //set Question list
+
+            return q;
+
+        } 
+
+        private MultipleChoiceQuestion parseMCQuestion(DocumentSnapshot qSnap)
+        {
+            MultipleChoiceQuestion mc = new MultipleChoiceQuestion();
+            mc.questionText = qSnap.GetValue<String>("Question");
+            //More logic for other values goes here
+
+            return mc; 
+        }
+
+        
         public async Task<List<Teacher>> getTeacherAccounts()
         {
             List<Teacher> q = new List<Teacher>();
