@@ -37,10 +37,15 @@
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.selectButton = new System.Windows.Forms.Button();
+            this.tf1 = new Sweng421FinalProject.TF();
             this.mc1 = new Sweng421FinalProject.MC();
             this.quizCreation1 = new Sweng421FinalProject.QuizCreation();
-            this.tf1 = new Sweng421FinalProject.TF();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.selectButton = new System.Windows.Forms.Button();
+            this.addButton = new System.Windows.Forms.Button();
+            this.doneButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -49,7 +54,7 @@
             // 
             this.DashboardLabel.AutoSize = true;
             this.DashboardLabel.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.DashboardLabel.Location = new System.Drawing.Point(7, 9);
+            this.DashboardLabel.Location = new System.Drawing.Point(12, 9);
             this.DashboardLabel.Name = "DashboardLabel";
             this.DashboardLabel.Size = new System.Drawing.Size(193, 28);
             this.DashboardLabel.TabIndex = 0;
@@ -131,19 +136,71 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.doneButton);
+            this.panel2.Controls.Add(this.addButton);
             this.panel2.Controls.Add(this.tf1);
-            this.panel2.Controls.Add(this.selectButton);
             this.panel2.Controls.Add(this.mc1);
             this.panel2.Controls.Add(this.quizCreation1);
+            this.panel2.Controls.Add(this.label5);
+            this.panel2.Controls.Add(this.label4);
+            this.panel2.Controls.Add(this.textBox1);
+            this.panel2.Controls.Add(this.selectButton);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(208, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(529, 503);
             this.panel2.TabIndex = 15;
             // 
+            // tf1
+            // 
+            this.tf1.Location = new System.Drawing.Point(181, 12);
+            this.tf1.Name = "tf1";
+            this.tf1.Size = new System.Drawing.Size(335, 440);
+            this.tf1.TabIndex = 9;
+            // 
+            // mc1
+            // 
+            this.mc1.Location = new System.Drawing.Point(181, 9);
+            this.mc1.Name = "mc1";
+            this.mc1.Size = new System.Drawing.Size(343, 440);
+            this.mc1.TabIndex = 8;
+            // 
+            // quizCreation1
+            // 
+            this.quizCreation1.Location = new System.Drawing.Point(7, 9);
+            this.quizCreation1.Name = "quizCreation1";
+            this.quizCreation1.Size = new System.Drawing.Size(177, 146);
+            this.quizCreation1.TabIndex = 7;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(7, 479);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(64, 15);
+            this.label5.TabIndex = 6;
+            this.label5.Text = "*-Required";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(7, 159);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(71, 15);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "*Quiz Name";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(7, 188);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(170, 23);
+            this.textBox1.TabIndex = 4;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
             // selectButton
             // 
-            this.selectButton.Location = new System.Drawing.Point(6, 164);
+            this.selectButton.Location = new System.Drawing.Point(7, 217);
             this.selectButton.Name = "selectButton";
             this.selectButton.Size = new System.Drawing.Size(171, 23);
             this.selectButton.TabIndex = 2;
@@ -151,26 +208,25 @@
             this.selectButton.UseVisualStyleBackColor = true;
             this.selectButton.Click += new System.EventHandler(this.selectButton_Click);
             // 
-            // mc1
+            // addButton
             // 
-            this.mc1.Location = new System.Drawing.Point(183, 9);
-            this.mc1.Name = "mc1";
-            this.mc1.Size = new System.Drawing.Size(335, 490);
-            this.mc1.TabIndex = 1;
+            this.addButton.Location = new System.Drawing.Point(299, 468);
+            this.addButton.Name = "addButton";
+            this.addButton.Size = new System.Drawing.Size(75, 23);
+            this.addButton.TabIndex = 10;
+            this.addButton.Text = "Add";
+            this.addButton.UseVisualStyleBackColor = true;
+            this.addButton.Click += new System.EventHandler(this.addButton_Click);
             // 
-            // quizCreation1
+            // doneButton
             // 
-            this.quizCreation1.Location = new System.Drawing.Point(0, 9);
-            this.quizCreation1.Name = "quizCreation1";
-            this.quizCreation1.Size = new System.Drawing.Size(177, 149);
-            this.quizCreation1.TabIndex = 0;
-            // 
-            // tf1
-            // 
-            this.tf1.Location = new System.Drawing.Point(183, 9);
-            this.tf1.Name = "tf1";
-            this.tf1.Size = new System.Drawing.Size(335, 490);
-            this.tf1.TabIndex = 3;
+            this.doneButton.Location = new System.Drawing.Point(441, 468);
+            this.doneButton.Name = "doneButton";
+            this.doneButton.Size = new System.Drawing.Size(75, 23);
+            this.doneButton.TabIndex = 11;
+            this.doneButton.Text = "Done";
+            this.doneButton.UseVisualStyleBackColor = true;
+            this.doneButton.Click += new System.EventHandler(this.doneButton_Click);
             // 
             // TeacherDashboard
             // 
@@ -184,6 +240,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -203,5 +260,10 @@
         private MC mc1;
         private System.Windows.Forms.Button selectButton;
         private TF tf1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button doneButton;
+        private System.Windows.Forms.Button addButton;
     }
 }

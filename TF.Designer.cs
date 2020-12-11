@@ -93,7 +93,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "TF";
-            this.Size = new System.Drawing.Size(335, 490);
+            this.Size = new System.Drawing.Size(335, 440);
             this.ResumeLayout(false);
             this.PerformLayout();
 

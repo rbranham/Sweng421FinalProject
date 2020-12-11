@@ -13,9 +13,15 @@ namespace Sweng421FinalProject
         public List<QuestionIF> quizzes; 
         public QuestionIF qif;
         public String questionType;
+        public String quizName;
+        public MultipleChoiceQuestion mc;
         public TeacherDashboard()
         {
             InitializeComponent();
+            addButton.Hide();
+            doneButton.Hide();
+            label4.Hide();
+            textBox1.Hide();
             selectButton.Hide();
             quizCreation1.Hide();
             mc1.Hide();
@@ -39,7 +45,8 @@ namespace Sweng421FinalProject
         private void createClick(object sender, EventArgs e)
         {
             quizCreation1.Show();
-            selectButton.Show();
+            label4.Show();
+            textBox1.Show();
         }
 
         private void logoutButton_Click(object sender, EventArgs e)
@@ -53,11 +60,14 @@ namespace Sweng421FinalProject
 
         private void selectButton_Click(object sender, EventArgs e)
         {
+            addButton.Show();
             questionType = quizCreation1.selectedType;
-            //add factory here 
-            //for now we only have multiple choice
+            quizName = textBox1.Text;
+            //add factory here for below
             if (questionType == "Multiple Choice")
             {
+                mc = new MultipleChoiceQuestion();
+                //initialize qu
                 tf1.Hide();
                 mc1.Show();
             }
@@ -67,6 +77,27 @@ namespace Sweng421FinalProject
                 tf1.Show();
             }
             //depending on the return of the factory, will depend on the view to show. right now only MC
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            selectButton.Show();
+        }
+
+        private void addButton_Click(object sender, EventArgs e)
+        {
+            mc.questionText = mc1.addQuestion;
+            mc.answers[0] = mc1.addAnswer1;
+            mc.answers[1] = mc1.addAnswer2;
+            mc.answers[2] = mc1.addAnswer3;
+            mc.answers[3] = mc1.addAnswer4;
+            doneButton.Show();
+        }
+
+        private void doneButton_Click(object sender, EventArgs e)
+        {
+            mc1.Hide();
+            tf1.Hide();
         }
     }
 }

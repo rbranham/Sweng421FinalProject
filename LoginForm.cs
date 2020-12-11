@@ -25,6 +25,8 @@ namespace Sweng421FinalProject
         public LoginForm()
         {
             InitializeComponent();
+            Student.Hide();     //remove for access to future Student selection
+            textBox2.Hide();    //remove for access to future Student text
 
             db = new DBhandler(); //Get database connection
 

@@ -155,7 +155,7 @@
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.textBox5);
             this.Name = "MC";
-            this.Size = new System.Drawing.Size(343, 480);
+            this.Size = new System.Drawing.Size(343, 440);
             this.ResumeLayout(false);
             this.PerformLayout();
 
