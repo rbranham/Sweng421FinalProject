@@ -94,6 +94,8 @@ namespace Sweng421FinalProject
             mc.answers[1] = mc1.addAnswer2;
             mc.answers[2] = mc1.addAnswer3;
             mc.answers[3] = mc1.addAnswer4;
+            mc.correctAnswer = mc1.addCorrectAnswer;
+            quiz.name = quizName;
             quiz.subQuestions.Add(mc);
             dbConnection.AddQuiz(quiz);
             //After the values are pulled they, can be added to the DB.            
