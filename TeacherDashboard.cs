@@ -10,7 +10,8 @@ namespace Sweng421FinalProject
 {
     public partial class TeacherDashboard : Form
     {
-        public List<QuestionIF> quizzes; 
+        //public List<QuestionIF> quizzes;
+        public Quiz quiz;
         public QuestionIF qif;
         public String questionType;
         public String quizName;
@@ -60,13 +61,14 @@ namespace Sweng421FinalProject
 
         private void selectButton_Click(object sender, EventArgs e)
         {
+            quiz = new Quiz();
             addButton.Show();
             questionType = quizCreation1.selectedType;
-            //add factory here for below
+
+            //add factory here for below to create question type and instantiate for use 
             if (questionType == "Multiple Choice")
             {
                 mc = new MultipleChoiceQuestion();
-                //initialize qu
                 tf1.Hide();
                 mc1.Show();
             }
@@ -85,19 +87,25 @@ namespace Sweng421FinalProject
 
         private void addButton_Click(object sender, EventArgs e)
         {
-            //DB handling can happen here.
+            DBhandler dbConnection = new DBhandler();
             quizName = textBox1.Text;
             mc.questionText = mc1.addQuestion;
             mc.answers[0] = mc1.addAnswer1;
             mc.answers[1] = mc1.addAnswer2;
             mc.answers[2] = mc1.addAnswer3;
             mc.answers[3] = mc1.addAnswer4;
+            quiz.subQuestions.Add(mc);
+            dbConnection.AddQuiz(quiz);
             //After the values are pulled they, can be added to the DB.            
             doneButton.Show();
         }
 
         private void doneButton_Click(object sender, EventArgs e)
         {
+            /*
+             *   When done button clicked, clear textboxes and get ready for next question
+             */
+
             addButton.Hide();
             mc1.addQuestion = null;
             mc1.addAnswer1 = null;
