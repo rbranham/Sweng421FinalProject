@@ -57,7 +57,12 @@ namespace Sweng421FinalProject
             Dictionary<string, object> questionData = new Dictionary<string, object>()
             {
                 {"Type", "MC" },   
-                {"Question", mc.questionText }
+                {"Question", mc.questionText },
+                {"AnswerOne", mc.answers[0] },
+                {"AnswerTwo", mc.answers[1] },
+                {"AnswerThree", mc.answers[2] },
+                {"AnswerFour", mc.answers[3] },
+                {"ActualAnswer", mc.correctAnswer }
             };
             await quizRef.AddAsync(questionData); 
 
@@ -123,7 +128,11 @@ namespace Sweng421FinalProject
         {
             MultipleChoiceQuestion mc = new MultipleChoiceQuestion();
             mc.questionText = qSnap.GetValue<String>("Question");
-            //More logic for other values goes here
+            mc.answers[0] = qSnap.GetValue<String>("AnswerOne");
+            mc.answers[0] = qSnap.GetValue<String>("AnswerOne");
+            mc.answers[0] = qSnap.GetValue<String>("AnswerOne");
+            mc.answers[0] = qSnap.GetValue<String>("AnswerOne");
+            mc.correctAnswer = qSnap.GetValue<String>("ActualAnswer");
 
             return mc; 
         }
