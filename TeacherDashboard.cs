@@ -12,10 +12,11 @@ namespace Sweng421FinalProject
     {
         public List<QuestionIF> quizzes; 
         public QuestionIF qif;
-        public String studentID;
+        public String questionType;
         public TeacherDashboard()
         {
             InitializeComponent();
+            selectButton.Hide();
             quizCreation1.Hide();
             mc1.Hide();
             //quizzes = new List<QuestionIF>();//init
@@ -37,6 +38,7 @@ namespace Sweng421FinalProject
         private void createClick(object sender, EventArgs e)
         {
             quizCreation1.Show();
+            selectButton.Show();
         }
 
         private void logoutButton_Click(object sender, EventArgs e)
@@ -48,9 +50,13 @@ namespace Sweng421FinalProject
             openDashboard(new AssignStudent()); //open new AssignStudent dashboard
         }
 
-        private void quizCreation1_Load(object sender, EventArgs e)
+        private void selectButton_Click(object sender, EventArgs e)
         {
-           
+            questionType = quizCreation1.selectedType;
+            //add factory here 
+            //for now we only have multiple choice
+            mc1.Show();
+            //depending on the return of the factory, will depend on the view to show. right now only MC
         }
     }
 }

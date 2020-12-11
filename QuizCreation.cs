@@ -14,7 +14,13 @@ namespace Sweng421FinalProject
         {
             InitializeComponent();
         }
-
+        public String selectedType
+        {
+            get
+            {
+                return (String)comboBox1.SelectedItem;
+            }
+        }
         private async void QuizCreation_Load(object sender, EventArgs e)
         {
             //here is where you bind the details of the comboBox
