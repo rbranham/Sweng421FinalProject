@@ -39,10 +39,21 @@ namespace Sweng421FinalProject
             DocumentReference addedDocRef = await collection.AddAsync(quizData); //Adds document to database
             CollectionReference questionSubcollection = addedDocRef.Collection("Questions"); //Create sub collection
 
-            foreach(QuestionIF question in q.getSubQuestions())
+            List<QuestionIF> qList = q.getSubQuestions();
+
+            Debug.WriteLine("Adding quiz with: " + qList.Count + " Questions");
+
+            for(int i = 0; i < qList.Count; i++) //Debug only to see if different quizes. 
+            {
+                Debug.WriteLine("Question " + i + " is: " + qList[i].getName());
+            }
+
+            foreach(QuestionIF question in qList)
             {
                 if (question is MultipleChoiceQuestion)
                 {
+                    Debug.WriteLine("from addquiz, Sending MC Question: " + question.getName());
+
                     AddMultipleChoice((MultipleChoiceQuestion)question, questionSubcollection);
                 } //Would add more question types below
                 else
@@ -54,6 +65,9 @@ namespace Sweng421FinalProject
 
         public async void AddMultipleChoice(MultipleChoiceQuestion mc, CollectionReference quizRef)
         {
+
+            Debug.WriteLine("Entering MC Question : " + mc.questionText);
+
             Dictionary<string, object> questionData = new Dictionary<string, object>()
             {
                 {"Type", "MC" },   
