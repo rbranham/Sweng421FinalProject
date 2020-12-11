@@ -52,6 +52,7 @@ namespace Sweng421FinalProject
         {
             Dictionary<string, object> questionData = new Dictionary<string, object>()
             {
+                {"Type", "MC" },   
                 {"Questions", mc.questionText }
             };
             await quizRef.AddAsync(questionData); 
