@@ -19,6 +19,7 @@ namespace Sweng421FinalProject
             selectButton.Hide();
             quizCreation1.Hide();
             mc1.Hide();
+            tf1.Hide();
             //quizzes = new List<QuestionIF>();//init
         }
 
@@ -55,7 +56,16 @@ namespace Sweng421FinalProject
             questionType = quizCreation1.selectedType;
             //add factory here 
             //for now we only have multiple choice
-            mc1.Show();
+            if (questionType == "Multiple Choice")
+            {
+                tf1.Hide();
+                mc1.Show();
+            }
+            else if (questionType == "Composite")
+            {
+                mc1.Hide();
+                tf1.Show();
+            }
             //depending on the return of the factory, will depend on the view to show. right now only MC
         }
     }
