@@ -16,6 +16,7 @@ namespace Sweng421FinalProject
         public String questionType;
         public String quizName;
         public MultipleChoiceQuestion mc;
+        DBhandler dbConnection = new DBhandler();
         public TeacherDashboard()
         {
             InitializeComponent();
@@ -87,7 +88,7 @@ namespace Sweng421FinalProject
 
         private void addButton_Click(object sender, EventArgs e)
         {
-            DBhandler dbConnection = new DBhandler();
+            //get information from Multiple Choice View
             quizName = textBox1.Text;
             mc.questionText = mc1.addQuestion;
             mc.answers[0] = mc1.addAnswer1;
@@ -96,9 +97,11 @@ namespace Sweng421FinalProject
             mc.answers[3] = mc1.addAnswer4;
             mc.correctAnswer = mc1.addCorrectAnswer;
             quiz.name = quizName;
+
+            //add question to Quiz list
             quiz.subQuestions.Add(mc);
-            dbConnection.AddQuiz(quiz);
-            //After the values are pulled they, can be added to the DB.            
+
+            //show done button so user can stop adding questions
             doneButton.Show();
         }
 
@@ -107,7 +110,7 @@ namespace Sweng421FinalProject
             /*
              *   When done button clicked, clear textboxes and get ready for next question
              */
-
+            dbConnection.AddQuiz(quiz);
             addButton.Hide();
             mc1.addQuestion = null;
             mc1.addAnswer1 = null;
