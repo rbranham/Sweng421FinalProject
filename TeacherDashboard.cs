@@ -16,7 +16,8 @@ namespace Sweng421FinalProject
         public TeacherDashboard()
         {
             InitializeComponent();
-            quizzes = new List<QuestionIF>();//init
+            quizCreation1.Hide();
+            //quizzes = new List<QuestionIF>();//init
         }
 
         private void TeacherDashboard_Load(object sender, EventArgs e)
@@ -34,8 +35,7 @@ namespace Sweng421FinalProject
 
         private void createClick(object sender, EventArgs e)
         {
-            qif = new Quiz();
-            qif.createQuiz();
+            quizCreation1.Show();
         }
 
         private void logoutButton_Click(object sender, EventArgs e)
