@@ -29,6 +29,36 @@ namespace Sweng421FinalProject
             return INSTANCE; 
         }
 
+        public async void AddQuiz(Quiz q)
+        {
+            CollectionReference collection = db.Collection("Quizes"); //Parent level quiz collection
+            Dictionary<string, object> quizData = new Dictionary<string, object>()
+            {
+                {"QuizName", q.getName() }
+            };
+            DocumentReference addedDocRef = await collection.AddAsync(quizData); //Adds document to database
+            CollectionReference questionSubcollection = addedDocRef.Collection("Questions"); //Create sub collection
+
+            foreach(QuestionIF question in q.getSubQuestions())
+            {
+                if (question is MultipleChoiceQuestion)
+                {
+                    AddMultipleChoice((MultipleChoiceQuestion)question, questionSubcollection);
+                } //Would add more question types below
+            }
+        }
+
+        public async void AddMultipleChoice(MultipleChoiceQuestion mc, CollectionReference quizRef)
+        {
+            Dictionary<string, object> questionData = new Dictionary<string, object>()
+            {
+                {"Questions", mc.questionText }
+            };
+            await quizRef.AddAsync(questionData); 
+
+        }
+
+
         public async Task<List<Teacher>> getTeacherAccounts()
         {
             List<Teacher> q = new List<Teacher>();

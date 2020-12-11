@@ -64,11 +64,16 @@ namespace Sweng421FinalProject
 
             return results; //Return the Results
         }
+
+        public List<QuestionIF> getSubQuestions()
+        {
+            return subQuestions; 
+        }
     }
 
     public class MultipleChoiceQuestion : QuestionIF
     {
-        String questionText;
+        public String questionText;
         //String correctAnswer;
 
 
