@@ -26,7 +26,7 @@ namespace Sweng421FinalProject
     public class Quiz : QuestionIF
     {
         public String name; 
-        public List<QuestionIF> subQuestions;
+        public List<QuestionIF> subQuestions = new List<QuestionIF>();
 
 
         public void createQuiz()
