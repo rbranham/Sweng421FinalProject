@@ -92,13 +92,18 @@ namespace Sweng421FinalProject
             mc.answers[1] = mc1.addAnswer2;
             mc.answers[2] = mc1.addAnswer3;
             mc.answers[3] = mc1.addAnswer4;
-            //After the values are pulled they, can be added to the DB.
-            
+            //After the values are pulled they, can be added to the DB.            
             doneButton.Show();
         }
 
         private void doneButton_Click(object sender, EventArgs e)
         {
+            addButton.Hide();
+            mc1.addQuestion = null;
+            mc1.addAnswer1 = null;
+            mc1.addAnswer2 = null;
+            mc1.addAnswer3 = null;
+            mc1.addAnswer4 = null;
             mc1.Hide();
             tf1.Hide();
         }
