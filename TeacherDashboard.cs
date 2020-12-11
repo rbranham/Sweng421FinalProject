@@ -62,7 +62,6 @@ namespace Sweng421FinalProject
         {
             addButton.Show();
             questionType = quizCreation1.selectedType;
-            quizName = textBox1.Text;
             //add factory here for below
             if (questionType == "Multiple Choice")
             {
@@ -86,11 +85,15 @@ namespace Sweng421FinalProject
 
         private void addButton_Click(object sender, EventArgs e)
         {
+            //DB handling can happen here.
+            quizName = textBox1.Text;
             mc.questionText = mc1.addQuestion;
             mc.answers[0] = mc1.addAnswer1;
             mc.answers[1] = mc1.addAnswer2;
             mc.answers[2] = mc1.addAnswer3;
             mc.answers[3] = mc1.addAnswer4;
+            //After the values are pulled they, can be added to the DB.
+            
             doneButton.Show();
         }
 
