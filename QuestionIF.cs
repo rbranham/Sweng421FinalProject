@@ -73,8 +73,9 @@ namespace Sweng421FinalProject
 
     public class MultipleChoiceQuestion : QuestionIF
     {
-        public String questionText;
+        public String questionText = "";
         public String correctAnswer;
+        public String[] answers = new string[4];
 
 
         //Need to call this to populate data
@@ -99,7 +100,6 @@ namespace Sweng421FinalProject
 
         public string getName()
         {
-            //return "Multiple Choice";
             return questionText;
         }
 
