@@ -47,7 +47,7 @@
             // 
             // doneButton
             // 
-            this.doneButton.Location = new System.Drawing.Point(707, 410);
+            this.doneButton.Location = new System.Drawing.Point(184, 391);
             this.doneButton.Name = "doneButton";
             this.doneButton.Size = new System.Drawing.Size(75, 23);
             this.doneButton.TabIndex = 1;
@@ -88,7 +88,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(794, 445);
+            this.ClientSize = new System.Drawing.Size(271, 428);
             this.Controls.Add(this.startButton);
             this.Controls.Add(this.listQuestionsToAnswer);
             this.Controls.Add(this.label1);
