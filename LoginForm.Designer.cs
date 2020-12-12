@@ -29,11 +29,9 @@
         private void InitializeComponent()
         {
             this.TeacherButton = new System.Windows.Forms.Button();
-            this.Student = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.closeButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -47,16 +45,6 @@
             this.TeacherButton.Text = "Teacher";
             this.TeacherButton.UseVisualStyleBackColor = true;
             this.TeacherButton.Click += new System.EventHandler(this.teacher_Click);
-            // 
-            // Student
-            // 
-            this.Student.Location = new System.Drawing.Point(33, 79);
-            this.Student.Name = "Student";
-            this.Student.Size = new System.Drawing.Size(75, 23);
-            this.Student.TabIndex = 1;
-            this.Student.Text = "Student";
-            this.Student.UseVisualStyleBackColor = true;
-            this.Student.Click += new System.EventHandler(this.student_Click);
             // 
             // textBox1
             // 
@@ -81,13 +69,6 @@
             this.label2.Size = new System.Drawing.Size(23, 15);
             this.label2.TabIndex = 3;
             this.label2.Text = "ID:";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(140, 79);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(189, 23);
-            this.textBox2.TabIndex = 2;
             // 
             // button1
             // 
@@ -116,11 +97,9 @@
             this.ClientSize = new System.Drawing.Size(353, 150);
             this.Controls.Add(this.closeButton);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.Student);
             this.Controls.Add(this.TeacherButton);
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -133,11 +112,9 @@
         #endregion
 
         private System.Windows.Forms.Button TeacherButton;
-        private System.Windows.Forms.Button Student;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button closeButton;
     }
