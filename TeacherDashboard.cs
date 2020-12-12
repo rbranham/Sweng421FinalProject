@@ -12,22 +12,23 @@ namespace Sweng421FinalProject
     {
         //public List<QuestionIF> quizzes;
         public Quiz quiz;
-        public QuestionIF qif;
         public String questionType;
         public String quizName;
         public MultipleChoiceQuestion mc;
         DBhandler dbConnection = new DBhandler();
+        private questionsFactory qFactory;
         public TeacherDashboard()
         {
             InitializeComponent();
-            addButton.Hide();
-            doneButton.Hide();
-            label4.Hide();
-            textBox1.Hide();
-            selectButton.Hide();
-            quizCreation1.Hide();
-            mc1.Hide();
-            tf1.Hide();
+            qFactory = new questionsFactory();
+            //addButton.Hide();
+            //doneButton.Hide();
+            //label4.Hide();
+            //textBox1.Hide();
+            //selectButton.Hide();
+            //quizCreation1.Hide();
+            //mc1.Hide();
+            //tf1.Hide();
             //quizzes = new List<QuestionIF>();//init
         }
 
@@ -63,19 +64,23 @@ namespace Sweng421FinalProject
         private void selectButton_Click(object sender, EventArgs e)
         {
             quiz = new Quiz();
-            addButton.Show();
+            //addButton.Show();
             questionType = quizCreation1.selectedType;
+            QuestionIF nextQuestion = qFactory.createQuestion(questionType); //Run factory to create question
+            nextQuestion.createQuiz();
 
             //add factory here for below to create question type and instantiate for use 
             if (questionType == "Multiple Choice")
             {
-                tf1.Hide();
-                mc1.Show();
+                //tf1.Hide();
+                //mc1.Show();
+                
             }
             else if (questionType == "Composite")
             {
-                mc1.Hide();
-                tf1.Show();
+                //mc1.Hide();
+                //tf1.Show();
+                //openDashboard(new TrueFalse)
             }
             //depending on the return of the factory, will depend on the view to show. right now only MC
         }
