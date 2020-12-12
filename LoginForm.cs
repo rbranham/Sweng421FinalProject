@@ -123,7 +123,7 @@ namespace Sweng421FinalProject
 
                 if (s != null)
                 {
-                    openDashboard(new StudentDashboard());  //Open student dashboard form
+                    //openDashboard(new StudentDashboard());  //Open student dashboard form
                 }
                 else
                 {

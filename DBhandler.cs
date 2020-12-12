@@ -65,10 +65,10 @@ namespace Sweng421FinalProject
             {
                 {"Type", "MC" },   
                 {"Question", mc.questionText },
-                {"AnswerOne", mc.answers[0] },
-                {"AnswerTwo", mc.answers[1] },
-                {"AnswerThree", mc.answers[2] },
-                {"AnswerFour", mc.answers[3] },
+                {"AnswerOne", mc.answer[0] },
+                {"AnswerTwo", mc.answer[1] },
+                {"AnswerThree", mc.answer[2] },
+                {"AnswerFour", mc.answer[3] },
                 {"ActualAnswer", mc.correctAnswer }
             };
             await quizRef.AddAsync(questionData); 
@@ -135,10 +135,10 @@ namespace Sweng421FinalProject
         {
             MultipleChoiceQuestion mc = new MultipleChoiceQuestion();
             mc.questionText = qSnap.GetValue<String>("Question");
-            mc.answers[0] = qSnap.GetValue<String>("AnswerOne");
-            mc.answers[0] = qSnap.GetValue<String>("AnswerOne");
-            mc.answers[0] = qSnap.GetValue<String>("AnswerOne");
-            mc.answers[0] = qSnap.GetValue<String>("AnswerOne");
+            mc.answer[0] = qSnap.GetValue<String>("AnswerOne");
+            mc.answer[0] = qSnap.GetValue<String>("AnswerOne");
+            mc.answer[0] = qSnap.GetValue<String>("AnswerOne");
+            mc.answer[0] = qSnap.GetValue<String>("AnswerOne");
             mc.correctAnswer = qSnap.GetValue<String>("ActualAnswer");
 
             return mc; 

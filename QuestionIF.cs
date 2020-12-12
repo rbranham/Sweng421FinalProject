@@ -75,11 +75,9 @@ namespace Sweng421FinalProject
 
     public class MultipleChoiceQuestion : QuestionIF
     {
-        public String questionText = "";
         public String correctAnswer;
-        public String[] answers = new string[4];
-
-
+        public String[] answer = new string[4];
+        public String questionText;
         //Need to call this to populate data
         public void createQuiz()
         {
@@ -87,8 +85,9 @@ namespace Sweng421FinalProject
             {
                 if (p.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
-                    this.questionText = p.question; //Get Question value
-                    this.correctAnswer = p.correct; //Get correct answer value
+                    this.correctAnswer = p.correctAnswer;
+                    this.answer = p.answers;
+                    this.questionText = p.questionText;
                 }
 
             }

@@ -11,14 +11,14 @@ namespace Sweng421FinalProject
     public partial class MultipleChoiceCreation : Form
     {
         //Variables to save 
-        public String question = "";
-        public String[] answer;
-        public String correct = "";
+        public String[] answers = new string[4];
+        public String correctAnswer;
+        public String questionText;
+        
 
         public MultipleChoiceCreation()
         {
             InitializeComponent();
-            buttonDone.Hide();
         }
 
         private void openDashboard(Form frm)
@@ -29,27 +29,27 @@ namespace Sweng421FinalProject
             this.Hide();
             frm.ShowDialog();
         }
-        private void buttonDone_Click(object sender, EventArgs e)
-        {           
-            this.Close();
-        }
 
         private void applyButton_Click(object sender, EventArgs e)
-        {
-            answer = new String[4] {answerBox1.Text, answerBox2.Text, answerBox3.Text, answerBox4.Text}; 
+        {             
+            answers[0] = answerBox1.Text;
+            answers[1] = answerBox2.Text;
+            answers[2] = answerBox3.Text;
+            answers[3] = answerBox4.Text;
+            
             if (answerRB1.Checked)
-                correct = answer[0];
+                correctAnswer = answers[0];
             else if (answerRB2.Checked)
-                correct = answer[1];
+                correctAnswer = answers[1];
             else if (answerRB3.Checked)
-                correct = answer[2];
+                correctAnswer = answers[2];
             else if (answerRB4.Checked)
-                correct = answer[3];
+                correctAnswer = answers[3];
             else
-                correct = "";
-            question = textBoxQuestion.Text; //Get Question text
- 
-            buttonDone.Show();
+                correctAnswer = "";
+            questionText = textBoxQuestion.Text; //Get Question text
+
+            this.Close();
         }
     }
 }

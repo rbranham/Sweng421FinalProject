@@ -30,7 +30,6 @@
         {
             this.labelQuestion = new System.Windows.Forms.Label();
             this.textBoxQuestion = new System.Windows.Forms.TextBox();
-            this.buttonDone = new System.Windows.Forms.Button();
             this.answerRB1 = new System.Windows.Forms.RadioButton();
             this.answerRB2 = new System.Windows.Forms.RadioButton();
             this.answerRB3 = new System.Windows.Forms.RadioButton();
@@ -57,16 +56,6 @@
             this.textBoxQuestion.Name = "textBoxQuestion";
             this.textBoxQuestion.Size = new System.Drawing.Size(268, 23);
             this.textBoxQuestion.TabIndex = 1;
-            // 
-            // buttonDone
-            // 
-            this.buttonDone.Location = new System.Drawing.Point(701, 403);
-            this.buttonDone.Name = "buttonDone";
-            this.buttonDone.Size = new System.Drawing.Size(75, 23);
-            this.buttonDone.TabIndex = 2;
-            this.buttonDone.Text = "Save";
-            this.buttonDone.UseVisualStyleBackColor = true;
-            this.buttonDone.Click += new System.EventHandler(this.buttonDone_Click);
             // 
             // answerRB1
             // 
@@ -142,11 +131,11 @@
             // 
             // applyButton
             // 
-            this.applyButton.Location = new System.Drawing.Point(620, 403);
+            this.applyButton.Location = new System.Drawing.Point(691, 403);
             this.applyButton.Name = "applyButton";
-            this.applyButton.Size = new System.Drawing.Size(75, 23);
+            this.applyButton.Size = new System.Drawing.Size(97, 35);
             this.applyButton.TabIndex = 8;
-            this.applyButton.Text = "Apply";
+            this.applyButton.Text = "Add";
             this.applyButton.UseVisualStyleBackColor = true;
             this.applyButton.Click += new System.EventHandler(this.applyButton_Click);
             // 
@@ -164,7 +153,6 @@
             this.Controls.Add(this.answerRB3);
             this.Controls.Add(this.answerRB2);
             this.Controls.Add(this.answerRB1);
-            this.Controls.Add(this.buttonDone);
             this.Controls.Add(this.textBoxQuestion);
             this.Controls.Add(this.labelQuestion);
             this.Name = "MultipleChoiceCreation";
@@ -178,7 +166,6 @@
 
         private System.Windows.Forms.Label labelQuestion;
         private System.Windows.Forms.TextBox textBoxQuestion;
-        private System.Windows.Forms.Button buttonDone;
 
         private System.Windows.Forms.RadioButton answerRB1;
         private System.Windows.Forms.RadioButton answerRB2;

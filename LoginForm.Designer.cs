@@ -123,6 +123,7 @@
             this.Controls.Add(this.Student);
             this.Controls.Add(this.TeacherButton);
             this.Name = "LoginForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.ResumeLayout(false);
             this.PerformLayout();

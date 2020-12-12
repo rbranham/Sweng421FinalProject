@@ -10,7 +10,6 @@ namespace Sweng421FinalProject
 {
     public partial class TeacherDashboard : Form
     {
-        //public List<QuestionIF> quizzes;
         public Quiz quiz;
         public String questionType;
         public String quizName;
@@ -21,15 +20,12 @@ namespace Sweng421FinalProject
         {
             InitializeComponent();
             qFactory = new questionsFactory();
-            //addButton.Hide();
-            //doneButton.Hide();
-            //label4.Hide();
-            //textBox1.Hide();
-            //selectButton.Hide();
-            //quizCreation1.Hide();
-            //mc1.Hide();
-            //tf1.Hide();
-            //quizzes = new List<QuestionIF>();//init
+
+            label4.Hide();
+            textBox1.Hide();
+            selectButton.Hide();
+            quizCreation1.Hide();
+
         }
 
         private void TeacherDashboard_Load(object sender, EventArgs e)
@@ -47,6 +43,7 @@ namespace Sweng421FinalProject
 
         private void createClick(object sender, EventArgs e)
         {
+            selectButton.Show();
             quizCreation1.Show();
             label4.Show();
             textBox1.Show();
@@ -64,25 +61,13 @@ namespace Sweng421FinalProject
         private void selectButton_Click(object sender, EventArgs e)
         {
             quiz = new Quiz();
-            //addButton.Show();
+            //mc = new MultipleChoiceQuestion();
             questionType = quizCreation1.selectedType;
             QuestionIF nextQuestion = qFactory.createQuestion(questionType); //Run factory to create question
             nextQuestion.createQuiz();
-
-            //add factory here for below to create question type and instantiate for use 
-            if (questionType == "Multiple Choice")
-            {
-                //tf1.Hide();
-                //mc1.Show();
-                
-            }
-            else if (questionType == "Composite")
-            {
-                //mc1.Hide();
-                //tf1.Show();
-                //openDashboard(new TrueFalse)
-            }
-            //depending on the return of the factory, will depend on the view to show. right now only MC
+            quiz.name = textBox1.Text;
+            quiz.subQuestions.Add(nextQuestion);
+            dbConnection.AddQuiz(quiz);
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -90,46 +75,5 @@ namespace Sweng421FinalProject
             selectButton.Show();
         }
 
-        private void addButton_Click(object sender, EventArgs e)
-        {
-            //get information from Multiple Choice View
-            mc = new MultipleChoiceQuestion();
-            quizName = textBox1.Text;
-            mc.questionText = mc1.addQuestion;
-            mc.answers[0] = mc1.addAnswer1;
-            mc.answers[1] = mc1.addAnswer2;
-            mc.answers[2] = mc1.addAnswer3;
-            mc.answers[3] = mc1.addAnswer4;
-            mc.correctAnswer = mc1.addCorrectAnswer;
-            quiz.name = quizName;
-
-            //add question to Quiz list
-            quiz.subQuestions.Add(mc);
-
-            //once added, clear the question text boxes
-            mc1.addQuestion = null;
-            mc1.addAnswer1 = null;
-            mc1.addAnswer2 = null;
-            mc1.addAnswer3 = null;
-            mc1.addAnswer4 = null;
-            //show done button so user can stop adding questions
-            doneButton.Show();
-        }
-
-        private void doneButton_Click(object sender, EventArgs e)
-        {
-            /*
-             *   When done button clicked, clear textboxes and get ready for next question
-             */
-            dbConnection.AddQuiz(quiz);
-            addButton.Hide();
-            mc1.addQuestion = null;
-            mc1.addAnswer1 = null;
-            mc1.addAnswer2 = null;
-            mc1.addAnswer3 = null;
-            mc1.addAnswer4 = null;
-            mc1.Hide();
-            tf1.Hide();
-        }
     }
 }
