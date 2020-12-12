@@ -31,16 +31,16 @@ namespace Sweng421FinalProject
 
         public void createQuiz()
         {
-            this.name = "Compound Questions";  //Should change to be and input
+            //this.name = "Compound Questions";  //Should change to be and input
 
-            using (TrueFalseCreation p = new TrueFalseCreation()) //Launch creation interface dialog
-            {
-                if (p.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-                {
-                    this.subQuestions = p.subQuestions; //set generated question list to internal list
-                }
+            //using (TrueFalseCreation p = new TrueFalseCreation()) //Launch creation interface dialog
+            //{
+            //    if (p.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            //    {
+            //        this.subQuestions = p.subQuestions; //set generated question list to internal list
+            //    }
 
-            }
+            //}
 
         }
 
@@ -121,10 +121,10 @@ namespace Sweng421FinalProject
             {
                 if (p.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
-                    //this.trueFalse = p.trueFalse;
-                    //this.questionText = p.questionText;
-                }
 
+                }
+                this.trueFalse = p.trueFalse;
+                this.questionText = p.questionText;
             }
 
         }
