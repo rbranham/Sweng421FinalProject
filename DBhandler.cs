@@ -99,7 +99,7 @@ namespace Sweng421FinalProject
 
             foreach (DocumentSnapshot quizSnap in snap.Documents)
             {
-                quizList.Add(quizSnap.GetValue<String>("Quizname"));
+                quizList.Add(quizSnap.GetValue<String>("QuizName"));
             }
 
             return quizList;
