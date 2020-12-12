@@ -11,8 +11,8 @@ namespace Sweng421FinalProject
             //logic for what question to create
             switch (s)
             {
-                case "Composite":
-                    return new Quiz();
+                case "True False":
+                    return new TrueFalseQuestion();
                 case "Multiple Choice":
                     return new MultipleChoiceQuestion();
                 default:

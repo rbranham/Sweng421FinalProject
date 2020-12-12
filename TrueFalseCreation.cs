@@ -10,13 +10,13 @@ using Sweng421FinalProject;
 
 namespace Sweng421FinalProject
 {
-    public partial class CompositeCreation : Form
+    public partial class TrueFalseCreation : Form
     {
 
         public List<QuestionIF> subQuestions;
         private questionsFactory qFactory; 
 
-        public CompositeCreation()
+        public TrueFalseCreation()
         {
             InitializeComponent();
             subQuestions = new List<QuestionIF>(); //Init
@@ -36,10 +36,10 @@ namespace Sweng421FinalProject
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            String typeString = listViewQuestionsTypes.SelectedItems[0].Text; //Get string of selected question type. 
-            QuestionIF nextQuestion = qFactory.createQuestion(typeString); //Run factory to create question
-            nextQuestion.createQuiz(); //run questions create function to fill out questions values
-            subQuestions.Add(nextQuestion); //Add created question to subquestions
+            //String typeString = listViewQuestionsTypes.SelectedItems[0].Text; //Get string of selected question type. 
+            //QuestionIF nextQuestion = qFactory.createQuestion(typeString); //Run factory to create question
+            //nextQuestion.createQuiz(); //run questions create function to fill out questions values
+            //subQuestions.Add(nextQuestion); //Add created question to subquestions
             refreshQuestionList(); //Call refresh
         }
 
@@ -59,13 +59,13 @@ namespace Sweng421FinalProject
          */
         private void refreshQuestionList()
         {
-            listViewQuestions.Clear(); 
+           // listViewQuestions.Clear(); 
 
             int i = 0; 
             foreach(QuestionIF q in subQuestions)
             {
                 i++; 
-                listViewQuestions.Items.Add(i + ". " + q.getName());
+            //    listViewQuestions.Items.Add(i + ". " + q.getName());
             }
 
         }
@@ -80,7 +80,7 @@ namespace Sweng421FinalProject
 
             foreach (String t in qTypes)
             {
-                listViewQuestionsTypes.Items.Add(t); //Add types into list
+             //   listViewQuestionsTypes.Items.Add(t); //Add types into list
             }
 
             //Can sort here if needed

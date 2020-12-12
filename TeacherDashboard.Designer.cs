@@ -42,6 +42,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.selectButton = new System.Windows.Forms.Button();
+            this.doneButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -132,6 +133,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.doneButton);
             this.panel2.Controls.Add(this.quizCreation1);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label4);
@@ -186,6 +188,16 @@
             this.selectButton.UseVisualStyleBackColor = true;
             this.selectButton.Click += new System.EventHandler(this.selectButton_Click);
             // 
+            // doneButton
+            // 
+            this.doneButton.Location = new System.Drawing.Point(7, 247);
+            this.doneButton.Name = "doneButton";
+            this.doneButton.Size = new System.Drawing.Size(171, 23);
+            this.doneButton.TabIndex = 8;
+            this.doneButton.Text = "Done Adding Questions";
+            this.doneButton.UseVisualStyleBackColor = true;
+            this.doneButton.Click += new System.EventHandler(this.doneButton_Click);
+            // 
             // TeacherDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -220,5 +232,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button doneButton;
     }
 }

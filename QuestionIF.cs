@@ -33,7 +33,7 @@ namespace Sweng421FinalProject
         {
             this.name = "Compound Questions";  //Should change to be and input
 
-            using (CompositeCreation p = new CompositeCreation()) //Launch creation interface dialog
+            using (TrueFalseCreation p = new TrueFalseCreation()) //Launch creation interface dialog
             {
                 if (p.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
@@ -81,13 +81,48 @@ namespace Sweng421FinalProject
         //Need to call this to populate data
         public void createQuiz()
         {
+
             using (MultipleChoiceCreation p = new MultipleChoiceCreation())
             {
                 if (p.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
-                    this.correctAnswer = p.correctAnswer;
-                    this.answer = p.answers;
-                    this.questionText = p.questionText;
+
+                }
+                this.correctAnswer = p.correctAnswer;
+                this.answer = p.answers;
+                this.questionText = p.questionText;
+            }
+
+        }
+
+        public ResultsIF generateAnswerKey()
+        {
+            throw new NotImplementedException();
+        }
+
+        public string getName()
+        {
+            return questionText;
+        }
+
+        public ResultsIF runQuiz()
+        {
+            throw new NotImplementedException();
+        }
+    }
+    public class TrueFalseQuestion : QuestionIF
+    {
+        public Boolean trueFalse;
+        public String questionText;
+        //Need to call this to populate data
+        public void createQuiz()
+        {
+            using (TrueFalseCreation p = new TrueFalseCreation())
+            {
+                if (p.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    //this.trueFalse = p.trueFalse;
+                    //this.questionText = p.questionText;
                 }
 
             }
@@ -109,5 +144,4 @@ namespace Sweng421FinalProject
             throw new NotImplementedException();
         }
     }
-
 }

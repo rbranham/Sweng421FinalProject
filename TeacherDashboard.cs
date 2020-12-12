@@ -20,7 +20,7 @@ namespace Sweng421FinalProject
         {
             InitializeComponent();
             qFactory = new questionsFactory();
-
+            doneButton.Hide();
             label4.Hide();
             textBox1.Hide();
             selectButton.Hide();
@@ -47,6 +47,7 @@ namespace Sweng421FinalProject
             quizCreation1.Show();
             label4.Show();
             textBox1.Show();
+            quiz = new Quiz();
         }
 
         private void logoutButton_Click(object sender, EventArgs e)
@@ -60,14 +61,12 @@ namespace Sweng421FinalProject
 
         private void selectButton_Click(object sender, EventArgs e)
         {
-            quiz = new Quiz();
-            //mc = new MultipleChoiceQuestion();
             questionType = quizCreation1.selectedType;
             QuestionIF nextQuestion = qFactory.createQuestion(questionType); //Run factory to create question
             nextQuestion.createQuiz();
             quiz.name = textBox1.Text;
             quiz.subQuestions.Add(nextQuestion);
-            dbConnection.AddQuiz(quiz);
+            doneButton.Show();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -75,5 +74,9 @@ namespace Sweng421FinalProject
             selectButton.Show();
         }
 
+        private void doneButton_Click(object sender, EventArgs e)
+        {
+            dbConnection.AddQuiz(quiz);
+        }
     }
 }
