@@ -21,7 +21,9 @@ namespace Sweng421FinalProject
         //private bool svalidID = false;
         List<Teacher> teachList;
         List<Student> studentList;
-        DBhandler db; 
+        DBhandler db;
+        Task<List<Teacher>> getTeachTask;
+        Task<List<Student>> getStudentTask; 
         public LoginForm()
         {
             InitializeComponent();
@@ -33,8 +35,11 @@ namespace Sweng421FinalProject
             //Call two async tasks to get in data
             //getAccountLists(databaseConnection);
             //getStudentLists(databaseConnection); 
-            getAccountLists();
-            getStudentLists(); 
+            //getAccountLists();
+            getTeachTask = db.getTeacherAccounts();  //Starts task load
+
+            getStudentTask = db.getStudentAccounts(); //Starts task to load students
+                //getStudentLists(); 
         }
 
         private async void getAccountLists()
@@ -80,7 +85,7 @@ namespace Sweng421FinalProject
             
         }
 
-        private void submit_Click(object sender, EventArgs e)
+        private async void submit_Click(object sender, EventArgs e)
         {
             String textTeacherBox = textBox1.Text;
             //String textStudentBox = textBox2.Text;
@@ -89,7 +94,9 @@ namespace Sweng421FinalProject
             {
 
                 Debug.WriteLine("Selection was teacher");
-                Teacher t; 
+                Teacher t;
+                teachList = await getTeachTask; //Will wait here untill the teacher list is loaded. 
+
                 try {
                     t = teachList.First(Teacher => Teacher.getUserName() == textTeacherBox);
                     Debug.WriteLine("first teacher is: " + t.getName());
