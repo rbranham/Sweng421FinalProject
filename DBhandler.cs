@@ -43,12 +43,15 @@ namespace Sweng421FinalProject
 
             Debug.WriteLine("Adding quiz with: " + qList.Count + " Questions");
 
-            foreach(QuestionIF question in qList)
+            foreach (QuestionIF question in qList)
             {
                 if (question is MultipleChoiceQuestion)
                 {
-                    AddMultipleChoice((MultipleChoiceQuestion)question, questionSubcollection);
-                } //Would add more question types below
+                    AddMultipleChoice((MultipleChoiceQuestion) question, questionSubcollection);
+                } else if(question is TrueFalseQuestion) {
+
+                    AddTrueFalseQuestion((TrueFalseQuestion)question, questionSubcollection);
+                }//Would add more question types below
                 else
                 {
                     throw new NotSupportedException(); 
@@ -73,6 +76,17 @@ namespace Sweng421FinalProject
             };
             await quizRef.AddAsync(questionData); 
 
+        }
+
+        public async void AddTrueFalseQuestion(TrueFalseQuestion q, CollectionReference quizRef)
+        {
+            Dictionary<string, object> questionData = new Dictionary<string, object>()
+            {
+                {"Type", "TF" },
+                {"questionText", q.questionText },
+                {"booleanAnswer", q.trueFalse }
+            };
+            await quizRef.AddAsync(questionData); 
         }
 
         public async Task<List<String>> getAllQuizzes()
@@ -113,13 +127,17 @@ namespace Sweng421FinalProject
             {
                 QuestionIF nextQ; 
                 //Runs for each quiz within
-                string type = questionSnap.GetValue<String>("Type"); 
-                if(type == "MC")
+                string type = questionSnap.GetValue<String>("Type");
+                if (type == "MC")
                 {
                     nextQ = parseMCQuestion(questionSnap); //Call get for MC assign to next Q
+                } else if (type == "TF"){
+
+                    nextQ = parseTrueFalseQuestion(questionSnap); 
+
                 } else
                 {
-                    throw new NotSupportedException(); 
+                    throw new NotSupportedException();
                 }
 
                 questionList.Add(nextQ);
@@ -144,7 +162,14 @@ namespace Sweng421FinalProject
             return mc; 
         }
 
-        
+        private TrueFalseQuestion parseTrueFalseQuestion(DocumentSnapshot qSnap)
+        {
+            TrueFalseQuestion q = new TrueFalseQuestion();
+            q.questionText = qSnap.GetValue<String>("questionText"); 
+            q.trueFalse = qSnap.GetValue<Boolean>("booleanAnswer");
+
+            return q; 
+        }
         public async Task<List<Teacher>> getTeacherAccounts()
         {
             List<Teacher> q = new List<Teacher>();
