@@ -37,12 +37,14 @@
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.doneButton = new System.Windows.Forms.Button();
             this.quizCreation1 = new Sweng421FinalProject.QuizCreation();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.selectButton = new System.Windows.Forms.Button();
-            this.doneButton = new System.Windows.Forms.Button();
+            this.assignQuiz1 = new Sweng421FinalProject.AssignQuiz();
+            this.selectQuizButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -133,6 +135,8 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.selectQuizButton);
+            this.panel2.Controls.Add(this.assignQuiz1);
             this.panel2.Controls.Add(this.doneButton);
             this.panel2.Controls.Add(this.quizCreation1);
             this.panel2.Controls.Add(this.label5);
@@ -144,6 +148,16 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(218, 388);
             this.panel2.TabIndex = 15;
+            // 
+            // doneButton
+            // 
+            this.doneButton.Location = new System.Drawing.Point(7, 247);
+            this.doneButton.Name = "doneButton";
+            this.doneButton.Size = new System.Drawing.Size(171, 23);
+            this.doneButton.TabIndex = 8;
+            this.doneButton.Text = "Done Adding Questions";
+            this.doneButton.UseVisualStyleBackColor = true;
+            this.doneButton.Click += new System.EventHandler(this.doneButton_Click);
             // 
             // quizCreation1
             // 
@@ -188,15 +202,22 @@
             this.selectButton.UseVisualStyleBackColor = true;
             this.selectButton.Click += new System.EventHandler(this.selectButton_Click);
             // 
-            // doneButton
+            // assignQuiz1
             // 
-            this.doneButton.Location = new System.Drawing.Point(7, 247);
-            this.doneButton.Name = "doneButton";
-            this.doneButton.Size = new System.Drawing.Size(171, 23);
-            this.doneButton.TabIndex = 8;
-            this.doneButton.Text = "Done Adding Questions";
-            this.doneButton.UseVisualStyleBackColor = true;
-            this.doneButton.Click += new System.EventHandler(this.doneButton_Click);
+            this.assignQuiz1.Location = new System.Drawing.Point(8, 9);
+            this.assignQuiz1.Name = "assignQuiz1";
+            this.assignQuiz1.Size = new System.Drawing.Size(177, 146);
+            this.assignQuiz1.TabIndex = 9;
+            // 
+            // selectQuizButton
+            // 
+            this.selectQuizButton.Location = new System.Drawing.Point(8, 317);
+            this.selectQuizButton.Name = "selectQuizButton";
+            this.selectQuizButton.Size = new System.Drawing.Size(170, 23);
+            this.selectQuizButton.TabIndex = 10;
+            this.selectQuizButton.Text = "Select Quiz";
+            this.selectQuizButton.UseVisualStyleBackColor = true;
+            this.selectQuizButton.Click += new System.EventHandler(this.selectQuizButton_Click);
             // 
             // TeacherDashboard
             // 
@@ -233,5 +254,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button doneButton;
+        private AssignQuiz assignQuiz1;
+        private System.Windows.Forms.Button selectQuizButton;
     }
 }

@@ -12,6 +12,7 @@ namespace Sweng421FinalProject
     {
         public Quiz quiz;
         public String questionType;
+        public String savedQuiz;
         public String quizName;
         public MultipleChoiceQuestion mc;
         DBhandler dbConnection = new DBhandler();
@@ -25,6 +26,8 @@ namespace Sweng421FinalProject
             textBox1.Hide();
             selectButton.Hide();
             quizCreation1.Hide();
+            assignQuiz1.Hide();
+            selectQuizButton.Hide();
 
         }
 
@@ -43,6 +46,7 @@ namespace Sweng421FinalProject
 
         private void createClick(object sender, EventArgs e)
         {
+            assignQuiz1.Hide();
             selectButton.Show();
             quizCreation1.Show();
             label4.Show();
@@ -56,7 +60,12 @@ namespace Sweng421FinalProject
         }
         private void assignButton_Click(object sender, EventArgs e)
         {
-            openDashboard(new AssignStudent()); //open new AssignStudent dashboard
+            quizCreation1.Hide();
+            selectButton.Hide();
+            label4.Hide();
+            textBox1.Hide();
+            assignQuiz1.Show();
+            selectQuizButton.Show();
         }
 
         private void selectButton_Click(object sender, EventArgs e)
@@ -77,6 +86,12 @@ namespace Sweng421FinalProject
         private void doneButton_Click(object sender, EventArgs e)
         {
             dbConnection.AddQuiz(quiz);
+        }
+
+        private void selectQuizButton_Click(object sender, EventArgs e)
+        {
+            savedQuiz = assignQuiz1.selectedType;
+            openDashboard(new AssignStudent(savedQuiz));
         }
     }
 }
