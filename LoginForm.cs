@@ -25,8 +25,8 @@ namespace Sweng421FinalProject
         public LoginForm()
         {
             InitializeComponent();
-            Student.Hide();     //remove for access to future Student selection
-            textBox2.Hide();    //remove for access to future Student text
+            //Student.Hide();     //remove for access to future Student selection
+            //textBox2.Hide();    //remove for access to future Student text
 
             db = new DBhandler(); //Get database connection
 
@@ -83,7 +83,7 @@ namespace Sweng421FinalProject
         private void submit_Click(object sender, EventArgs e)
         {
             String textTeacherBox = textBox1.Text;
-            String textStudentBox = textBox2.Text;
+            //String textStudentBox = textBox2.Text;
 
             if (selection == "teacher")
             {
@@ -110,32 +110,32 @@ namespace Sweng421FinalProject
                 }
                 
             }
-            else if (selection == "student")
-            {
-                Student s;
+            //else if (selection == "student")
+            //{
+            //    Student s;
 
-                try
-                {
-                    s = studentList.First(Student => Student.getUserName() == textStudentBox);
-                    Debug.WriteLine("first teacher is: " + s.getName());
-                }
-                catch { s = null; } //If can't find  set as null
+            //    try
+            //    {
+            //        s = studentList.First(Student => Student.getUserName() == textStudentBox);
+            //        Debug.WriteLine("first teacher is: " + s.getName());
+            //    }
+            //    catch { s = null; } //If can't find  set as null
 
-                if (s != null)
-                {
-                    //openDashboard(new StudentDashboard());  //Open student dashboard form
-                }
-                else
-                {
-                    textBox2.Text = "Invalid ID, try again!";
-                }
+            //    if (s != null)
+            //    {
+            //        //openDashboard(new StudentDashboard());  //Open student dashboard form
+            //    }
+            //    else
+            //    {
+            //        textBox2.Text = "Invalid ID, try again!";
+            //    }
 
                 
-            }
+            //}
             else
             {
                
-               textBox1.Text = "Please Select a account type";
+               textBox1.Text = "Please Select an account type";
                
             }
 
